@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { schedules, speakers } from '@/lib/data';
-import { AiScheduler } from './ai-scheduler';
 
 const getSpeakerImage = (name: string) => {
     const speaker = speakers.find(s => s.name === name);
@@ -68,7 +67,6 @@ export function Schedule() {
             </TabsContent>
           ))}
         </Tabs>
-        <AiScheduler />
       </div>
     </section>
   );
