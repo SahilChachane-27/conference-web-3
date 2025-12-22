@@ -10,8 +10,8 @@ export function Testimonials() {
     <section id="testimonials" className="relative text-white py-20 md:py-28">
        {bgImage && (
             <Image
-                src={bgImage.imageUrl}
-                alt={bgImage.description}
+                src="/2.jpg"
+                alt="testimonials"
                 fill
                 className="object-cover"
                 data-ai-hint={bgImage.imageHint}
