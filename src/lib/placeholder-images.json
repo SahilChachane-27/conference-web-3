@@ -73,6 +73,12 @@
       "imageHint": "blurred background"
     },
     {
+      "id": "tickets-background",
+      "description": "Background for the tickets section",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGdyYWRpZW50fGVufDB8fHx8MTc2NjQyMjIwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful gradient"
+    },
+    {
       "id": "sponsor-skype",
       "description": "Logo for Skype.",
       "imageUrl": "https://images.unsplash.com/photo-1587573578181-f3342274f4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxTa3lwZSUyMGxvZ298ZW58MHx8fHwxNzY2NDE5NzY5fDA&ixlib=rb-4.1.0&q=80&w=1080",

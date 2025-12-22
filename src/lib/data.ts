@@ -7,6 +7,7 @@ const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as
 export const navLinks = [
   { href: '#speakers', label: 'Speakers' },
   { href: '#schedules', label: 'Schedules' },
+  { href: '#tickets', label: 'Tickets' },
   { href: '#sponsors', label: 'Sponsors' },
   { href: '#info', label: 'Info' },
   { href: '#contact', label: 'Contact' },
@@ -131,6 +132,12 @@ export const schedules = [
     },
 ];
 
+export const tickets = [
+    { type: 'Personal', price: 100, features: ['2 Days Pass', '1 Workshop', 'Free Lunch'], featured: false },
+    { type: 'Business', price: 200, features: ['5 Days Pass', '3 Workshops', 'Free Lunch and Snacks'], featured: true },
+    { type: 'Premium', price: 300, features: ['5 Days Pass', '5 Workshops', 'VIP Seating and Full Catering'], featured: false },
+  ];
+
 export const testimonials = [
     { quote: "I'm very happy with this event. I will recommend this to my family and friends. The speakers are professional. It's worth quality for the price.", author: "John, Freelancer" },
     { quote: "A wonderful event thank you! The best event as it proved by quality. I learn many digital things. I would definitely return for future events.", author: "Sarah, College Student" },
@@ -171,5 +178,3 @@ export const socialLinks = [
     { name: 'Rss', icon: 'Rss' as const, href: '#' },
     { name: 'Dribbble', icon: 'Dribbble' as const, href: '#' },
 ];
-
-    

@@ -12,8 +12,8 @@ export function Hero() {
           {heroData.images.map((img, index) => (
             <CarouselItem key={index} className="h-full">
               <Image
-                src="/1.jpg"
-                alt="one image"
+                src={img.imageUrl}
+                alt={img.description}
                 fill
                 className="object-cover"
                 priority={index === 0}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ export function Header() {
   return (
     <header className={cn(
       "fixed top-0 z-50 w-full transition-colors duration-300",
-      scrolled ? "bg-white" : "bg-transparent"
+      scrolled ? "bg-white shadow-md" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Logo scrolled={scrolled} />
@@ -49,7 +48,7 @@ export function Header() {
               href={link.href} 
               className={cn(
                 "text-sm font-medium transition-colors",
-                scrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
+                scrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary-foreground/80"
               )}
             >
               {link.label}
@@ -64,7 +63,8 @@ export function Header() {
                 variant="ghost" 
                 size="icon" 
                 className={cn(
-                  scrolled ? "text-black hover:bg-black/10" : "text-white hover:bg-white/10"
+                  "hover:bg-white/10",
+                  scrolled ? "text-foreground hover:bg-black/10" : "text-white"
                 )}
               >
                 <Menu className="h-6 w-6" />
