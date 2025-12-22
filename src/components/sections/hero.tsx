@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen min-h-[700px] w-full text-white pt-16">
+    <section id="home" className="relative h-[calc(100vh-4rem)] min-h-[700px] w-full text-white">
       <Carousel className="absolute inset-0 h-full w-full">
         <CarouselContent className="h-full">
           {heroData.images.map((img, index) => (
