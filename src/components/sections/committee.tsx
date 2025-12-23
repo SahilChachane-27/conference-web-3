@@ -1,5 +1,5 @@
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { committeeData } from "@/lib/data";
 
 const SectionTitle = ({ title }: { title: string }) => (
@@ -27,6 +27,18 @@ const ContactCard = ({ name, role }: { name:string, role: string}) => (
     </Card>
 );
 
+const LeadershipCard = ({ title, member }: { title: string; member: { name: string; role: string } }) => (
+    <Card className="bg-muted/50 border-l-4 border-primary shadow-xl w-full max-w-lg mx-auto">
+        <CardHeader>
+            <CardTitle className="font-headline text-2xl text-center text-primary">{title}</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+            <p className="font-bold text-2xl text-foreground">{member.name}</p>
+            <p className="text-lg text-muted-foreground">{member.role}</p>
+        </CardContent>
+    </Card>
+)
+
 export function Committee() {
   return (
     <section id="committee" className="py-20 md:py-28 bg-muted/30">
@@ -48,17 +60,9 @@ export function Committee() {
             </div>
         </div>
 
-        <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <div>
-                    <SectionTitle title={committeeData.generalChief.title} />
-                    {committeeData.generalChief.members.map((member, i) => <MemberCard key={i} {...member} />)}
-                </div>
-                <div>
-                    <SectionTitle title={committeeData.convener.title} />
-                    {committeeData.convener.members.map((member, i) => <MemberCard key={i} {...member} />)}
-                </div>
-            </div>
+        <div className="mb-16 space-y-12">
+            <LeadershipCard title={committeeData.generalChief.title} member={committeeData.generalChief.members[0]} />
+            <LeadershipCard title={committeeData.convener.title} member={committeeData.convener.members[0]} />
         </div>
 
         {/* Patrons */}
