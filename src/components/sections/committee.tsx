@@ -9,8 +9,8 @@ const SectionTitle = ({ title }: { title: string }) => (
     </div>
 );
 
-const MemberCard = ({ name, role, isAdvisory = false }: { name:string, role: string, isAdvisory?: boolean}) => (
-    <Card className={`text-center shadow-md hover:shadow-lg transition-shadow duration-300 ${isAdvisory ? 'border-l-4 border-accent' : ''}`}>
+const MemberCard = ({ name, role }: { name:string, role: string, isAdvisory?: boolean}) => (
+    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300">
         <CardContent className="p-6 flex flex-col items-center justify-center">
             <p className="font-bold text-lg text-foreground">{name}</p>
             <p className="text-sm text-muted-foreground">{role}</p>
@@ -73,7 +73,7 @@ export function Committee() {
         <div className="my-16">
             <SectionTitle title={committeeData.advisoryCommittee.title} />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} isAdvisory />)}
+                {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} />)}
             </div>
         </div>
         
