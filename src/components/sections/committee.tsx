@@ -1,17 +1,6 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { committeeData } from "@/lib/data";
-import { UserCheck, Users, Shield, Star, Award, Phone } from "lucide-react";
-
-const iconMap = {
-  'Chief Patron': Shield,
-  'Patrons': Star,
-  'General Chief': UserCheck,
-  'Convener': Award,
-  'Co- Convener': Award,
-  'Advisory Committee member': Users,
-  'Correspondence Contact': Phone,
-};
 
 const SectionTitle = ({ title }: { title: string }) => (
     <div className="mb-8 text-center">
