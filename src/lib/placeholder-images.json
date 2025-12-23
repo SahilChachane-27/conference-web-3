@@ -125,6 +125,12 @@
       "description": "Logo for Pinterest.",
       "imageUrl": "https://images.unsplash.com/photo-1690138871282-b84c8bb4244d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2NpYWwlMjBsb2dvfGVufDB8fHx8MTc2NjQyMTg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "social logo"
+    },
+    {
+      "id": "college-building",
+      "description": "An image of the Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts building.",
+      "imageUrl": "https://images.unsplash.com/photo-1592066575517-58df903152f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xsZWdlJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY2NDgyNTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "college building"
     }
   ]
 }

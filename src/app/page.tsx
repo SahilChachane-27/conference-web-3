@@ -13,6 +13,7 @@ import { Preamble } from "@/components/sections/preamble";
 import { Objectives } from "@/components/sections/objectives";
 import { CallForPapers } from "@/components/sections/call-for-papers";
 import { Committee } from "@/components/sections/committee";
+import { AboutCollege } from "@/components/sections/about-college";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <div className="relative bg-background z-10">
           <Preamble />
+          <AboutCollege />
           <Objectives />
           <CallForPapers />
           <Schedule />
