@@ -162,10 +162,10 @@ export const schedules = [
 ];
 
 export const tickets = [
-    { type: 'Research Scholars / Students', description: 'For full-time students and research scholars.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
-    { type: 'Faculty / Academicians', description: 'For faculty members and academicians from educational institutions.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: true },
-    { type: 'Industry Professionals', description: 'For delegates from corporate and industrial organizations.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
-    { type: 'Attendees', description: 'For participants not presenting a paper.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], featured: false },
+    { type: 'Research Scholars / Students', cost: '$100', description: 'For full-time students and research scholars.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
+    { type: 'Faculty / Academicians', cost: '$150', description: 'For faculty members and academicians from educational institutions.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: true },
+    { type: 'Industry Professionals', cost: '$250', description: 'For delegates from corporate and industrial organizations.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
+    { type: 'Attendees', cost: '$50', description: 'For participants not presenting a paper.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], featured: false },
   ];
 
 export const testimonials = [

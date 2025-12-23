@@ -1,9 +1,9 @@
+
 "use client";
 
 import { useState } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { tickets } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Check } from 'lucide-react';
@@ -60,9 +60,12 @@ export function Tickets() {
                             <CardHeader className="text-center">
                                 <CardTitle className="font-headline text-2xl">{ticket.type}</CardTitle>
                             </CardHeader>
-                            <CardContent className="flex-grow">
+                            <CardContent className="flex-grow space-y-4">
                                 <p className="text-sm text-muted-foreground">{ticket.description}</p>
-                                <ul className="space-y-3 mt-4">
+                                <div className="text-4xl font-bold text-center font-headline text-primary">
+                                    {ticket.cost}
+                                </div>
+                                <ul className="space-y-3 pt-4">
                                     {ticket.features.map((feature, i) => (
                                         <li key={i} className="flex items-start gap-3">
                                             <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
@@ -72,13 +75,7 @@ export function Tickets() {
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button 
-                                    onClick={() => handleGetTicket(ticket.type)}
-                                    variant={ticket.featured ? "default" : "secondary"} 
-                                    className={cn("w-full", ticket.featured && "bg-accent hover:bg-accent/90 text-accent-foreground")}
-                                >
-                                    Register
-                                </Button>
+                                <p className='text-xs text-muted-foreground text-center w-full'>Registration fee is non-refundable.</p>
                             </CardFooter>
                         </Card>
                     ))}
