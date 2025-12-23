@@ -5,10 +5,10 @@ export function AboutCollege() {
     const collegeImage = PlaceHolderImages.find(img => img.id === 'college-building');
 
   return (
-    <section id="about-college" className="py-20 md:py-28 bg-background">
+    <section id="about-college" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">
               About the <span className="text-primary">College</span>
             </h2>
@@ -39,7 +39,7 @@ export function AboutCollege() {
                     alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
                     width={600}
                     height={800}
-                    className="rounded-lg shadow-lg object-contain w-full"
+                    className="rounded-lg shadow-2xl object-contain w-full"
                     data-ai-hint={collegeImage.imageHint}
                 />
             )}
