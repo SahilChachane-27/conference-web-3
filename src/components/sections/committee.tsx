@@ -55,8 +55,15 @@ export function Committee() {
         {/* Leadership */}
         <div className="mb-16">
             <SectionTitle title={committeeData.chiefPatrons.title} />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {committeeData.chiefPatrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {committeeData.chiefPatrons.members.map((member, i) => (
+                    <Card key={i} className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2">
+                        <CardContent className="p-6">
+                            <p className="font-bold text-lg text-primary-foreground">{member.name}</p>
+                            <p className="text-sm text-primary-foreground/80">{member.role}</p>
+                        </CardContent>
+                    </Card>
+                ))}
             </div>
         </div>
 
