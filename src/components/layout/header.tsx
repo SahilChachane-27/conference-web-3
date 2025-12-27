@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ChevronDown } from 'lucide-react';
-import { navLinks } from '@/lib/data';
+import { navLinks, socialLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import {
     DropdownMenu,
@@ -15,6 +15,13 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import * as Icons from 'lucide-react';
+
+const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.ComponentProps<typeof Icons.Icon>) => {
+    const LucideIcon = Icons[name] as React.ComponentType<any>;
+    return <LucideIcon {...props} />;
+};
+
 
 const Logo = ({ scrolled }: { scrolled: boolean }) => (
     <Link href="/" className="flex items-center gap-2">
@@ -81,7 +88,15 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
+              {socialLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="text-foreground/60 hover:text-primary transition-colors">
+                  <Icon name={link.icon} className="h-5 w-5" />
+                  <span className="sr-only">{link.name}</span>
+                </Link>
+              ))}
+            </div>
             
             <div className="md:hidden">
               {isClient && (
