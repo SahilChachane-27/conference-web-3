@@ -40,13 +40,13 @@ export function Header() {
 
   const navLinkClasses = (scrolled: boolean) => cn(
     "text-sm font-medium transition-colors",
-    scrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary-foreground/80"
+    "text-foreground hover:text-primary"
   );
 
   return (
     <header className={cn(
       "fixed top-0 z-50 w-full transition-colors duration-300",
-      scrolled ? "bg-white shadow-md" : "bg-transparent"
+      scrolled ? "bg-white shadow-md" : "bg-white"
     )}>
        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo scrolled={scrolled} />
@@ -81,7 +81,7 @@ export function Header() {
 
         <div className="flex items-center">
             <div className="hidden md:block">
-                <Button asChild variant={scrolled ? 'default' : 'secondary'}>
+                <Button asChild variant={scrolled ? 'default' : 'default'}>
                     <Link href="#tickets">Register</Link>
                 </Button>
             </div>
@@ -94,7 +94,7 @@ export function Header() {
                       size="icon" 
                       className={cn(
                         "hover:bg-white/10",
-                        scrolled ? "text-foreground hover:bg-black/10" : "text-white"
+                        scrolled ? "text-foreground hover:bg-black/10" : "text-foreground"
                       )}
                     >
                       <Menu className="h-6 w-6" />
