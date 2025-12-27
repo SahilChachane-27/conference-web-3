@@ -94,7 +94,7 @@ export function Header() {
             src="/scopus.png" // change path if needed
             alt="Header Visual"
             width={60}
-            height={40}
+            height={80}
             className="object-contain"
           />
 
