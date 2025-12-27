@@ -5,22 +5,24 @@ import { PlaceHolderImages } from './placeholder-images';
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as ImagePlaceholder;
 
 export const navLinks = [
-  { 
-    label: 'About',
+  {
+    label: "About",
     isDropdown: true,
     subLinks: [
-      { href: '/about/conference', label: 'About Conference' },
-      { href: '/about/researcher-connect', label: 'About Researcher Connect' },
-      { href: '/about/college', label: 'About College' },
-    ]
+      { href: "/about/conference", label: "About Conference" },
+      { href: "/about/researcher-connect", label: "About Researcher Connect" },
+      { href: "/about/college", label: "About College" },
+    ],
   },
-  { href: '/call-for-papers', label: 'Call for Papers' },
-  { href: '/publication-details', label: 'Publications' },
-  { href: '/important-dates', label: 'Important Dates' },
-  { href: '/registration', label: 'Registration' },
-  { href: '/speakers', label: 'Speakers' },
-  { href: '/committee', label: 'Committee' },
+  { href: "/call-for-papers", label: "Call for Papers" },
+  { href: "/committee", label: "Committee" },
+  { href: "/speakers", label: "Speakers" },
+  { href: "/important-dates", label: "Important Dates" },
+  { href: "/publication-details", label: "Publication" },
+  { href: "/registration", label: "Registration" },
+  { href: "/venue", label: "Venue" },
 ];
+
 
 export const heroData = {
   title: 'SustainTechCon 2026',
