@@ -19,9 +19,9 @@ export function CallForPapers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Conference Themes */}
-          <Card className="lg:col-span-3 shadow-lg flex flex-col">
+          <Card className="lg:col-span-2 shadow-lg flex flex-col">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -60,7 +60,7 @@ export function CallForPapers() {
           </Card>
 
           {/* Submission and Publication Details */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-1 space-y-8">
             <Card className="shadow-lg">
               <CardHeader>
                 <div className="flex items-center gap-4">
@@ -76,25 +76,6 @@ export function CallForPapers() {
                     <li key={detail}>{detail}</li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <BookOpenCheck className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="font-headline text-2xl">{callForPapers.publicationDetails.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Selected papers will be published in Scopus-indexed proceedings or journals. All submissions undergo rigorous peer review.</p>
-                <Button asChild variant="outline">
-                  <Link href="/publication-details">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </CardContent>
             </Card>
           </div>
