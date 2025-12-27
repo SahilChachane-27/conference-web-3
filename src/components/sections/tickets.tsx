@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState } from 'react';
@@ -57,35 +58,32 @@ export function Tickets() {
                         At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-accent'>click here</Link>.
                     </p>
                 </div>
-                <div className="max-w-6xl mx-auto bg-card/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-                   <Table className="text-card-foreground">
+                <div className="max-w-4xl mx-auto bg-card/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+                   <Table>
                         <TableHeader>
-                            <TableRow className="border-b-white/20">
-                            <TableHead className="text-white font-bold">Category</TableHead>
-                            <TableHead className="text-white font-bold">Description</TableHead>
-                            <TableHead className="text-white font-bold text-center">Cost (USD)</TableHead>
-                            <TableHead className="text-right text-white font-bold">Action</TableHead>
+                            <TableRow className="border-b-white/20 hover:bg-white/10">
+                                <TableHead className="text-white font-bold text-lg">Category</TableHead>
+                                <TableHead className="text-right text-white font-bold text-lg">Cost (USD)</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tickets.map((ticket) => (
-                            <TableRow key={ticket.type} className="border-b-white/10 last:border-b-0">
-                                <TableCell className="font-semibold">{ticket.type}</TableCell>
-                                <TableCell className="text-white/80">{ticket.description}</TableCell>
-                                <TableCell className="text-center font-bold text-xl">{ticket.cost}</TableCell>
-                                <TableCell className="text-right">
-                                <Button
-                                    variant={ticket.featured ? "default" : "secondary"}
-                                    onClick={() => handleGetTicket(ticket.type)}
-                                    className={ticket.featured ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
-                                >
-                                    Register
-                                </Button>
-                                </TableCell>
+                            <TableRow key={ticket.type} className="border-b-white/10 last:border-b-0 hover:bg-white/5">
+                                <TableCell className="font-semibold text-base text-white">{ticket.type}</TableCell>
+                                <TableCell className="text-right font-bold text-xl text-white">{ticket.cost}</TableCell>
                             </TableRow>
                             ))}
                         </TableBody>
                     </Table>
+                    <div className="p-6 text-center">
+                        <Button
+                            size="lg"
+                            className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                            onClick={() => handleGetTicket("General")}
+                        >
+                            Register Now
+                        </Button>
+                    </div>
                 </div>
             </div>
 
@@ -94,7 +92,7 @@ export function Tickets() {
                     <AlertDialogHeader>
                     <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You have successfully simulated registering for the <span className="font-bold">{selectedTicket}</span> category.
+                        You have successfully simulated registering for the conference.
                         This is a demonstration and no actual registration has been made.
                     </AlertDialogDescription>
                     </AlertDialogHeader>
