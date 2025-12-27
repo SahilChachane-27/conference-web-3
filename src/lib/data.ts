@@ -227,7 +227,7 @@ export const objectives = [
     ],
     publicationDetails: {
         title: 'Publication Details',
-        description: 'Selected high-quality papers will be published in Scopus-indexed conference proceedings / journals (as per publisher approval). Additional accepted papers may be published in peer-reviewed journals with DOI. All papers will be subjected to rigorous peer review, plagiarism, and quality checks. Publication is subject to publisher norms and ethical guidelines.',
+        description: 'Selected high-quality papers will be published in Scopus-Indexed Conference Proceedings / Scopus Journals (as per publisher approval at additional APC Charges ). Additional accepted papers may be published in peer-reviewed journals with DOI. All papers will be subjected to rigorous peer review, plagiarism, and quality checks. Publication is subject to publisher norms and ethical guidelines.',
         indexing: 'Scopus (for selected proceedings)'
     }
 };
