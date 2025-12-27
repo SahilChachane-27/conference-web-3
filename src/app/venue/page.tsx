@@ -25,7 +25,7 @@ export default function VenuePage() {
             {/* Image */}
             <div className="relative w-full h-[320px] md:h-[480px]">
               <Image
-                src="/venue.jpg"
+                src="/college.JPG"
                 alt="Conference Venue"
                 fill
                 className="object-cover"
