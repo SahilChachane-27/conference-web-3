@@ -11,9 +11,11 @@ const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.Component
 export function Footer() {
   return (
     <footer className="bg-black text-white">
-      <div className="container py-2 text-center">
-        <div className="flex justify-center mb-8">
-            <Image src="/reframed_logo-preview.png" alt="SustainTechCon Logo" width={120} height={120} />
+      <div className="container py-8 text-center">
+        <div className="flex justify-center items-center gap-8 md:gap-12 mb-8 flex-wrap">
+            <Image src="/reframed_logo-preview.png" alt="SustainTechCon Logo" width={100} height={100} className="object-contain" />
+            <Image src="/college.JPG" alt="College Logo" width={100} height={100} className="object-contain rounded-md" />
+            <Image src="/RC_logo.jpeg" alt="Researcher Connect Logo" width={100} height={100} className="object-contain" />
         </div>
         <div className="flex justify-center gap-6 mb-6">
           {socialLinks.map((link) => (
