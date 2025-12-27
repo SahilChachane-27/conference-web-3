@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, ChevronDown } from "lucide-react";
@@ -29,55 +29,36 @@ const Logo = () => (
 );
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={cn(
-        "fixed top-0 z-50 w-full transition-all",
-        scrolled
-          ? "bg-white shadow-md"
-          : "bg-black/40 backdrop-blur text-white"
-      )}
-    >
+    <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo />
 
         {/* ================= DESKTOP NAV ================= */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+        <nav
+          className="hidden md:flex items-center gap-6"
+          aria-label="Main navigation"
+        >
           {navLinks.map((link) =>
             link.isDropdown ? (
               <div key={link.label} className="relative group">
                 <button
                   type="button"
                   aria-haspopup="true"
-                  className={cn(
-                    "flex items-center gap-1 text-sm font-medium focus:outline-none",
-                    scrolled ? "text-foreground" : "text-white"
-                  )}
+                  className="flex items-center gap-1 text-sm font-medium text-black"
                 >
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
 
-                <div
-                  className="absolute left-0 mt-2 hidden min-w-[220px] rounded-md bg-white shadow-lg group-hover:block"
-                  role="menu"
-                >
+                <div className="absolute left-0 mt-2 hidden min-w-[220px] rounded-md bg-white shadow-lg group-hover:block">
                   {link.subLinks?.map((sub) => (
                     <Link
                       key={sub.href}
                       href={sub.href}
-                      className="block px-4 py-2 text-sm text-foreground hover:bg-muted"
-                      role="menuitem"
+                      className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                     >
                       {sub.label}
                     </Link>
@@ -88,12 +69,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  scrolled
-                    ? "text-foreground hover:text-primary"
-                    : "text-white hover:text-primary"
-                )}
+                className="text-sm font-medium text-black hover:text-gray-700"
               >
                 {link.label}
               </Link>
@@ -111,7 +87,7 @@ export function Header() {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" aria-label="Open Menu">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-black" />
               </Button>
             </SheetTrigger>
 
@@ -127,14 +103,16 @@ export function Header() {
                   {navLinks.map((link) =>
                     link.isDropdown ? (
                       <div key={link.label}>
-                        <p className="text-sm font-semibold">{link.label}</p>
+                        <p className="text-sm font-semibold text-black">
+                          {link.label}
+                        </p>
                         <div className="ml-4 mt-2 flex flex-col gap-2">
                           {link.subLinks?.map((sub) => (
                             <Link
                               key={sub.href}
                               href={sub.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="text-foreground/80 hover:text-foreground"
+                              className="text-black hover:text-gray-700"
                             >
                               {sub.label}
                             </Link>
@@ -146,7 +124,7 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="text-lg font-medium text-foreground/80 hover:text-foreground"
+                        className="text-lg font-medium text-black hover:text-gray-700"
                       >
                         {link.label}
                       </Link>
