@@ -143,6 +143,12 @@
       "description": "An abstract image representing innovation and collaboration among researchers.",
       "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2NjUwMTAyNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "innovation collaboration"
+    },
+    {
+      "id": "publication-details",
+      "description": "An image of books and research papers, symbolizing academic publication.",
+      "imageUrl": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGJvb2tzfGVufDB8fHx8MTc2NjUzMTIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "academic books"
     }
   ]
 }

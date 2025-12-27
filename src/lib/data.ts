@@ -15,6 +15,7 @@ export const navLinks = [
     ]
   },
   { href: '/call-for-papers', label: 'Call for Papers' },
+  { href: '/publication-details', label: 'Publications' },
   { href: '/important-dates', label: 'Important Dates' },
   { href: '/registration', label: 'Registration' },
   { href: '/speakers', label: 'Speakers' },
@@ -372,3 +373,4 @@ export const committeeData = {
         ]
     }
 };
+

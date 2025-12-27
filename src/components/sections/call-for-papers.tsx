@@ -2,7 +2,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { callForPapers } from "@/lib/data";
-import { FileText, BookOpenCheck, ListChecks, Landmark } from "lucide-react";
+import { FileText, BookOpenCheck, ListChecks, Landmark, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function CallForPapers() {
   return (
@@ -87,8 +89,12 @@ export function CallForPapers() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-3">{callForPapers.publicationDetails.description}</p>
-                <p className="font-semibold text-primary">Indexing: <span className="font-normal text-muted-foreground">{callForPapers.publicationDetails.indexing}</span></p>
+                <p className="text-muted-foreground mb-4">Selected papers will be published in Scopus-indexed proceedings or journals. All submissions undergo rigorous peer review.</p>
+                <Button asChild variant="outline">
+                  <Link href="/publication-details">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </div>
