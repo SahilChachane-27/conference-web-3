@@ -5,7 +5,15 @@ import { PlaceHolderImages } from './placeholder-images';
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as ImagePlaceholder;
 
 export const navLinks = [
-  { href: '#preamble', label: 'About' },
+  { 
+    label: 'About',
+    isDropdown: true,
+    subLinks: [
+      { href: '/about/conference', label: 'About Conference' },
+      { href: '/about/researcher-connect', label: 'About Researcher Connect' },
+      { href: '/about/college', label: 'About College' },
+    ]
+  },
   { href: '#papers', label: 'Call for Papers' },
   { href: '#schedules', label: 'Important Dates' },
   { href: '#tickets', label: 'Registration' },
