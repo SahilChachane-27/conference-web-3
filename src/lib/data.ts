@@ -358,7 +358,8 @@ export const committeeData = {
         members: [
             { name: 'Dr. Rais A. Mulla', role: '(8485863406)' },
             { name: 'Dr. Mahendra E. Pawar', role: '(9890838047)' },
-            { name: 'Dr. Gaytri Bachhav', role: '(8087294699)' }
+            { name: 'Dr. Gayatri Bachhav', role: '(8087294699)' },
+            { name: 'Prof. Manisha Patil', role: '(9664214038)' }
         ]
     }
 };
