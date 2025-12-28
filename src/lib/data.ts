@@ -287,8 +287,8 @@ export const testimonials = [
 ];
     
 export const contactInfo = [
-    { title: 'Email Us', icon: 'Mail' as const, value: 'sustaintechcon@vpceng.ac.in' },
-    { title: 'Call Us', icon: 'Smartphone' as const, value: '+91-XXXXX-XXXXX' },
+    { title: 'Email Us', icon: 'Mail' as const, value: 'sustaintechcon@pvppcoe.ac.in' },
+    { title: 'Call Us', icon: 'Smartphone' as const, value: '+91-8485863406' },
     { title: 'Address', icon: 'Home' as const, value: 'Vasantadada Patil Pratishthan’s College of Engineering and Visual Arts' },
 ];
   
