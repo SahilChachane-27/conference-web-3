@@ -50,21 +50,25 @@ export function Tickets() {
                         At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-accent'>click here</Link>.
                     </p>
                 </div>
-                <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-lg shadow-lg overflow-hidden border border-white/20">
+                <div className="max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-lg shadow-lg overflow-hidden border border-white/20">
                    <Table>
                         <TableHeader>
                             <TableRow className="border-b border-white/20">
                                 <TableHead className="text-white font-bold text-base md:text-lg">Registration Type</TableHead>
-                                <TableHead className="text-accent font-bold text-base md:text-lg">Early Bird</TableHead>
-                                <TableHead className="text-accent font-bold text-base md:text-lg">Late Bird</TableHead>
+                                <TableHead className="text-accent font-bold text-base md:text-lg text-center">Early Bird</TableHead>
+                                <TableHead className="text-accent font-bold text-base md:text-lg text-center">Late Bird</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tickets.map((ticket) => (
                                 <TableRow key={ticket.type} className="border-0">
                                     <TableCell className="font-headline text-base md:text-lg font-semibold text-white">{ticket.type}</TableCell>
-                                    <TableCell className="font-bold text-lg md:text-xl text-white">{ticket.earlyBird}</TableCell>
-                                    <TableCell className="font-bold text-lg md:text-xl text-white">{ticket.lateBird}</TableCell>
+                                    <TableCell className="font-bold text-base md:text-lg text-white text-center">
+                                        {ticket.earlyBird.usd} / {ticket.earlyBird.inr}
+                                    </TableCell>
+                                    <TableCell className="font-bold text-base md:text-lg text-white text-center">
+                                        {ticket.lateBird.usd} / {ticket.lateBird.inr}
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
@@ -89,3 +93,5 @@ export function Tickets() {
         </section>
     );
 }
+
+    

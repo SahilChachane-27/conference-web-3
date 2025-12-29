@@ -272,12 +272,43 @@ export const schedules = [
 ];
 
 export const tickets = [
-    { type: 'Student UG/PG', earlyBird: '$100', lateBird: '$120', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
-    { type: 'PhD / Research Scholar', earlyBird: '$125', lateBird: '$150', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
-    { type: 'Academia / Professional', earlyBird: '$150', lateBird: '$175', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: true },
-    { type: 'International Author', earlyBird: '$200', lateBird: '$225', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
-    { type: 'Attendee', earlyBird: '$50', lateBird: '$60', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], featured: false },
-  ];
+  { 
+      type: 'Student UG/PG (India)', 
+      earlyBird: { usd: '$100', inr: '₹8,000' },
+      lateBird: { usd: '$120', inr: '₹10,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
+      featured: false 
+  },
+  { 
+      type: 'PhD / Research Scholar (India)', 
+      earlyBird: { usd: '$125', inr: '₹10,000' },
+      lateBird: { usd: '$150', inr: '₹12,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
+      featured: false 
+  },
+  { 
+      type: 'Academia / Professional (India)', 
+      earlyBird: { usd: '$150', inr: '₹12,000' },
+      lateBird: { usd: '$175', inr: '₹14,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
+      featured: true 
+  },
+  { 
+      type: 'International Author', 
+      earlyBird: { usd: '$200', inr: '₹16,000' },
+      lateBird: { usd: '$225', inr: '₹18,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
+      featured: false 
+  },
+  { 
+      type: 'Attendee (India)', 
+      earlyBird: { usd: '$50', inr: '₹4,000' },
+      lateBird: { usd: '$60', inr: '₹5,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], 
+      featured: false 
+  },
+];
+
 
 export const testimonials = [
     { quote: "A fantastic platform for sharing cutting-edge research in sustainable tech. The keynote sessions were particularly insightful.", author: "A. Sharma, University of Delhi" },
@@ -363,5 +394,7 @@ export const committeeData = {
 };
 
 
+
+    
 
     
