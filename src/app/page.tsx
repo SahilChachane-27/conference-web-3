@@ -10,6 +10,9 @@ import { Objectives } from "@/components/sections/objectives";
 import { AboutCollege } from "@/components/sections/about-college";
 import { Organizers } from "@/components/sections/organizers";
 import { RegisterNowCta } from "@/components/sections/register-now-cta";
+import { Speakers } from '@/components/sections/speakers';
+import { Schedule } from '@/components/sections/schedule';
+import { Tickets } from '@/components/sections/tickets';
 
 export default function Home() {
   return (
@@ -19,9 +22,10 @@ export default function Home() {
         <Hero />
         <div className="relative bg-background z-10">
           <Preamble />
-          <RegisterNowCta />
+          <Speakers />
+          <Schedule />
+          <Tickets />
           <AboutCollege />
-          <Objectives />
           <Organizers />
         </div>
       </main>

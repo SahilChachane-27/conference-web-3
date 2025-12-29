@@ -16,7 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { navLinks, socialLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 
 /* ================= ICON HELPER ================= */
 const Icon = ({
@@ -35,9 +35,9 @@ const Logo = () => (
     <Image
       src="/reframed_logo-preview.png"
       alt="SustainTechCon Logo"
-      width={200}
-      height={60}
-      className="h-14 w-48"
+      width={120}
+      height={40}
+      className="h-10 w-auto"
       priority
     />
   </Link>
@@ -47,16 +47,24 @@ const Logo = () => (
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+      <div className={`container mx-auto flex h-20 items-center justify-between px-4 md:px-6 transition-all duration-300`}>
         {/* Logo */}
-        <Logo />
+        <div className="flex-shrink-0">
+          <Logo />
+        </div>
 
         {/* ================= DESKTOP NAV ================= */}
         <nav className="hidden md:flex items-center gap-6">
@@ -65,7 +73,7 @@ export function Header() {
               <div key={link.label} className="relative group">
                 <button
                   type="button"
-                  className="flex items-center gap-1 text-sm font-medium text-black">
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-black' : 'text-white'} hover:text-secondary`}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -88,7 +96,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-black hover:text-gray-700"
+                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-secondary`}
               >
                 {link.label}
               </Link>
@@ -97,30 +105,12 @@ export function Header() {
         </nav>
 
         {/* ================= RIGHT SIDE ================= */}
-        <div className="hidden md:flex items-center gap-6">
-          {/* Extra Image */}
-          <Image
-            src="/scopus.png"
-            alt="Scopus"
-            width={150}
-            height={150}
-            className="h-24 w-auto"
-          />
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-black hover:text-gray-700 transition-colors"
-                aria-label={link.name}
-              >
-                <Icon name={link.icon} className="h-5 w-5" />
-              </Link>
-            ))}
-          </div>
+        <div className="hidden md:flex items-center gap-4">
+            <Button asChild variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/registration">Tickets</Link>
+            </Button>
         </div>
+
 
         {/* ================= MOBILE MENU ================= */}
         <div className="md:hidden">
@@ -128,11 +118,11 @@ export function Header() {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open Menu">
-                  <Menu className="h-6 w-6 text-black" />
+                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
 
-              <SheetContent side="right">
+              <SheetContent side="right" className="bg-white">
                 <SheetHeader>
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 </SheetHeader>
@@ -153,7 +143,7 @@ export function Header() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-black hover:text-gray-700"
+                                className="text-black hover:text-secondary"
                               >
                                 {sub.label}
                               </Link>
@@ -163,9 +153,9 @@ export function Header() {
                       ) : (
                         <Link
                           key={link.href}
-                          href="{link.href}"
+                          href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="text-lg font-medium text-black hover:text-gray-700"
+                          className="text-lg font-medium text-black hover:text-secondary"
                         >
                           {link.label}
                         </Link>
@@ -173,17 +163,10 @@ export function Header() {
                     )}
                   </nav>
 
-                  {/* Mobile Social Icons */}
-                  <div className="flex gap-4 pt-4">
-                    {socialLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        className="text-black hover:text-gray-700"
-                      >
-                        <Icon name={link.icon} className="h-5 w-5" />
-                      </Link>
-                    ))}
+                  <div className="pt-4">
+                    <Button asChild variant="secondary" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                        <Link href="/registration">Tickets</Link>
+                    </Button>
                   </div>
                 </div>
               </SheetContent>

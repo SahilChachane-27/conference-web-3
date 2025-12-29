@@ -1,4 +1,3 @@
-
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -17,24 +16,23 @@ export const navLinks = [
   { href: "/call-for-papers", label: "Call for Papers" },
   { href: "/committee", label: "Committee" },
   { href: "/speakers", label: "Speakers" },
-  { href: "/important-dates", label: "Important Dates" },
+  { href: "/important-dates", label: "Schedule" },
   { href: "/publication-details", label: "Publication" },
-  { href: "/registration", label: "Registration" },
   { href: "/venue", label: "Venue" },
 ];
 
 
 export const heroData = {
   title: 'SustainTechCon 2026',
-  subtitle: '1st International Conference on Sustainable Technologies and Intelligent Systems',
+  subtitle: 'The 1st International Conference on Sustainable Technologies and Intelligent Systems',
   date: '6–7 March 2026',
-  location: 'Vasantadada Patil Pratishthan’s College of Engineering and Visual Arts',
+  location: 'VPPCOE&VA, Mumbai',
   countdownTarget: '2026-03-06T09:00:00',
   images: [getImage('hero-1'), getImage('hero-2')],
 };
 
 export const preamble = {
-    title: 'Preamble 2',
+    title: 'Preamble',
     content: "SustainTechCon 2026 is the 1st International Conference on Sustainable Technologies and Intelligent Systems, designed to bring together researchers, academicians, industry experts, innovators, and policymakers from across the globe. The conference focuses on the convergence of sustainability, intelligent systems, artificial intelligence, IoT, smart engineering, and emerging technologies to address real-world challenges. In the era of rapid technological advancement and environmental concerns, SustainTechCon 2026 aims to provide a premier platform for knowledge exchange, innovation, and interdisciplinary collaboration. The conference emphasizes cutting-edge research, practical implementations, and sustainable engineering solutions aligned with global development goals."
 }
 
@@ -224,26 +222,50 @@ export const objectives = [
 export const speakers = [
   {
     name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
     image: getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
     image: getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
     image: getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
+    image: getImage('speaker-placeholder'),
+  },
+  {
+    name: 'Coming Soon',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
+    image: getImage('speaker-placeholder'),
+  },
+  {
+    name: 'Coming Soon',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
+    image: getImage('speaker-placeholder'),
+  },
+    {
+    name: 'Coming Soon',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
+    image: getImage('speaker-placeholder'),
+  },
+  {
+    name: 'Coming Soon',
+    title: 'Distinguished Speaker',
+    bio: 'An overview of this speaker and their talk will be available soon.',
     image: getImage('speaker-placeholder'),
   },
 ];
@@ -273,35 +295,40 @@ export const schedules = [
 
 export const tickets = [
   { 
-      type: 'Student UG/PG (India)', 
+      type: 'Student UG/PG',
+      category: 'Indian Delegate',
       earlyBird: { usd: '$100', inr: '₹8,000' },
       lateBird: { usd: '$120', inr: '₹10,000' },
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: false 
   },
   { 
-      type: 'PhD / Research Scholar (India)', 
+      type: 'PhD / Research Scholar',
+      category: 'Indian Delegate', 
       earlyBird: { usd: '$125', inr: '₹10,000' },
       lateBird: { usd: '$150', inr: '₹12,000' },
-      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
-      featured: false 
-  },
-  { 
-      type: 'Academia / Professional (India)', 
-      earlyBird: { usd: '$150', inr: '₹12,000' },
-      lateBird: { usd: '$175', inr: '₹14,000' },
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: true 
   },
   { 
+      type: 'Academia / Professional', 
+      category: 'Indian Delegate',
+      earlyBird: { usd: '$150', inr: '₹12,000' },
+      lateBird: { usd: '$175', inr: '₹14,000' },
+      features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
+      featured: false 
+  },
+    { 
       type: 'International Author', 
+      category: 'International Delegate',
       earlyBird: { usd: '$200', inr: '₹16,000' },
       lateBird: { usd: '$225', inr: '₹18,000' },
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: false 
   },
   { 
-      type: 'Attendee (India)', 
+      type: 'Attendee Only',
+      category: 'All Delegates',
       earlyBird: { usd: '$50', inr: '₹4,000' },
       lateBird: { usd: '$60', inr: '₹5,000' },
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], 
@@ -369,7 +396,7 @@ export const committeeData = {
         ]
     },
     advisoryCommittee: {
-        title: 'Advisory Committee member',
+        title: 'Advisory Committee',
         members: [
             { name: 'Dr. Chandra Prakash', role: 'SVNIT Surat' },
             { name: 'Dr. Alok Kumar', role: 'SVNIT Surat' },
@@ -404,8 +431,3 @@ export const publishingPartners = [
     { name: 'Sass', image: getImage('sponsor-sass') },
     { name: 'Pinterest', image: getImage('sponsor-pinterest') },
 ];
-
-
-    
-
-    

@@ -9,7 +9,7 @@ interface CountdownProps {
 }
 
 const CountdownItem = ({ value, label }: { value: number; label: TimeUnit }) => (
-  <div className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-4 w-24">
+  <div className="flex flex-col items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg p-4 w-28 h-28 border border-white/30">
     <span className="text-4xl font-bold font-headline tracking-tighter">{value}</span>
     <span className="text-sm font-medium uppercase tracking-wider">{label}</span>
   </div>
@@ -52,9 +52,9 @@ export function Countdown({ targetDate }: CountdownProps) {
     return (
         <div className="flex justify-center gap-4 animate-pulse">
             {(['Days', 'Hours', 'Minutes', 'Seconds'] as TimeUnit[]).map(unit => (
-                <div key={unit} className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-4 w-24">
-                    <div className="h-10 w-10 bg-white/20 rounded"></div>
-                    <div className="h-4 w-16 bg-white/20 rounded mt-2"></div>
+                <div key={unit} className="flex flex-col items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg p-4 w-28 h-28">
+                    <div className="h-10 w-16 bg-white/30 rounded"></div>
+                    <div className="h-4 w-20 bg-white/30 rounded mt-2"></div>
                 </div>
             ))}
         </div>
@@ -62,7 +62,7 @@ export function Countdown({ targetDate }: CountdownProps) {
   }
 
   return (
-    <div className="flex justify-center gap-2 md:gap-4">
+    <div className="flex justify-center gap-2 md:gap-4 text-white">
       {(Object.keys(timeLeft) as TimeUnit[]).map((unit) => (
         <CountdownItem key={unit} value={timeLeft[unit]} label={unit} />
       ))}
