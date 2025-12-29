@@ -31,9 +31,9 @@ const Logo = () => (
     <Image
       src="/reframed_logo-preview.png"
       alt="SustainTechCon Logo"
-      width={160}
-      height={48}
-      className="h-12 w-40"
+      width={200}
+      height={60}
+      className="h-14 w-48"
       priority
     />
   </Link>
@@ -70,8 +70,8 @@ export function Header() {
                   <ChevronDown className="h-4 w-4" />
                 </button>
 
-                <div className="absolute left-0 pt-2 hidden min-w-[220px] group-hover:block">
-                    <div className="rounded-md bg-white shadow-lg py-1">
+                <div className="absolute left-0 pt-0 hidden min-w-[220px] group-hover:block">
+                    <div className="rounded-md bg-white shadow-lg py-2">
                         {link.subLinks?.map((sub) => (
                             <Link
                             key={sub.href}
