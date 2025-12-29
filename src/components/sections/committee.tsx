@@ -12,10 +12,10 @@ const SectionTitle = ({ title }: { title: string }) => (
 
 const MemberCard = ({ name, role, isAdvisory }: { name:string, role: string, isAdvisory?: boolean}) => (
     <Card className={cn(
-        "text-center shadow-md hover:shadow-lg transition-shadow duration-300",
+        "text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-center",
         isAdvisory && "bg-primary/5 border-primary/20 hover:bg-primary/10"
     )}>
-        <CardContent className="p-6 flex flex-col items-center justify-center">
+        <CardContent className="p-6">
             <p className="font-bold text-lg text-foreground">{name}</p>
             <p className="text-sm text-muted-foreground">{role}</p>
         </CardContent>
@@ -30,18 +30,6 @@ const ContactCard = ({ name, role }: { name:string, role: string}) => (
         </CardContent>
     </Card>
 );
-
-const LeadershipCard = ({ title, member }: { title: string; member: { name: string; role: string } }) => (
-    <Card className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2">
-      <CardHeader className="pb-2">
-        <CardTitle className="font-headline text-lg text-primary">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-4">
-        <p className="font-bold text-lg text-foreground">{member.name}</p>
-        <p className="text-sm text-muted-foreground">{member.role}</p>
-      </CardContent>
-    </Card>
-  );
 
 export function Committee() {
   return (
@@ -73,10 +61,17 @@ export function Committee() {
 
         <div className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <LeadershipCard title={committeeData.generalChief.title} member={committeeData.generalChief.members[0]} />
-              <LeadershipCard title={committeeData.convener.title} member={committeeData.convener.members[0]} />
+            <div>
+              <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
+              <MemberCard {...committeeData.generalChief.members[0]} />
+            </div>
+            <div>
+              <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
+              <MemberCard {...committeeData.convener.members[0]} />
+            </div>
           </div>
         </div>
+
 
         {/* Patrons */}
         <div className="my-16">
@@ -95,17 +90,14 @@ export function Committee() {
         </div>
         
         {/* Co-convener and Contacts */}
-   <div className="min-h-screen flex items-center justify-center">
-  <div className="max-w-6xl w-full">
-    <SectionTitle title={committeeData.correspondenceContact.title} />
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
-      {committeeData.correspondenceContact.members.map((member, i) => (
-        <ContactCard key={i} {...member} />
-      ))}
-    </div>
-  </div>
-</div>
+        <div className="my-16">
+            <SectionTitle title={committeeData.correspondenceContact.title} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {committeeData.correspondenceContact.members.map((member, i) => (
+                    <ContactCard key={i} {...member} />
+                ))}
+            </div>
+        </div>
 
       </div>
     </section>
