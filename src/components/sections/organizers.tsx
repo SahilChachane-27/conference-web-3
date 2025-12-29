@@ -1,6 +1,12 @@
 
 import Image from 'next/image';
 
+const logos = [
+    { src: "/College.png", alt: "College Logo" },
+    { src: "/SDG.webp", alt: "SDG Logo" },
+    { src: "/RC Updated.jpeg", alt: "Researcher Connect Logo" },
+];
+
 export function Organizers() {
   return (
     <section id="organizers" className="py-20 md:py-28 bg-background">
@@ -13,10 +19,21 @@ export function Organizers() {
             Proudly organized and supported by the following institutions.
           </p>
         </div>
-        <div className="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
-            <Image src="/College.png" alt="College Logo" width={120} height={160} className="object-contain bg-white rounded-md" />
-            <Image src="/SDG.webp" alt="College Logo" width={120} height={160} className="object-contain bg-white rounded-md" />
-          <Image src="/RC Updated.jpeg" alt="Researcher Connect Logo" width={120} height={160} className="object-contain bg-white rounded-md" />
+        <div className="relative w-full overflow-hidden">
+            <div className="flex animate-marquee">
+                {[...logos, ...logos].map((logo, index) => (
+                    <div key={index} className="flex-shrink-0 mx-6">
+                        <Image 
+                            src={logo.src} 
+                            alt={logo.alt} 
+                            width={120} 
+                            height={160} 
+                            className="object-contain bg-white rounded-md" 
+                        />
+                    </div>
+                ))}
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
         </div>
       </div>
     </section>
