@@ -91,6 +91,9 @@ export function Footer() {
                     </Link>
                 ))}
                 </div>
+                <div className="mt-4">
+                    <Image src="/RC Updated.jpeg" alt="Researcher Connect Logo" width={100} height={100} className="object-contain bg-white rounded-md p-1" />
+                </div>
             </div>
         </div>
 
