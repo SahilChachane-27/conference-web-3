@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { socialLinks, contactInfo, navLinks } from '@/lib/data';
 import * as Icons from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.ComponentProps<typeof Icons.Icon>) => {
     const LucideIcon = Icons[name] as React.ComponentType<any>;
@@ -57,25 +57,29 @@ export function Footer() {
                  <h2 className="font-headline text-2xl font-bold">
                     Quick <span className="text-accent">Links</span>
                 </h2>
-                <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
-                    {navLinks.map((link) => (
-                        link.isDropdown ? (
-                            link.subLinks?.map(subLink => (
-                                <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
-                                    {subLink.label}
-                                </Link>
-                            ))
-                        ) : (
-                            <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
-                                {link.label}
-                            </Link>
-                        )
-                    ))}
-                </nav>
+                <Card className="bg-card/20 backdrop-blur-sm text-card-foreground border-l-4 border-accent shadow-sm hover:shadow-md transition-shadow duration-300 w-full">
+                    <CardContent className="p-4">
+                        <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
+                            {navLinks.map((link) => (
+                                link.isDropdown ? (
+                                    link.subLinks?.map(subLink => (
+                                        <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
+                                            {subLink.label}
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
+                                        {link.label}
+                                    </Link>
+                                )
+                            ))}
+                        </nav>
+                    </CardContent>
+                </Card>
             </div>
 
             {/* Column 3: Social Links */}
-            <div className="space-y-4 flex flex-col items-center">
+            <div className="space-y-4 flex flex-col items-center pt-4">
                  <h2 className="font-headline text-2xl font-bold">
                     Follow <span className="text-accent">Us</span>
                 </h2>
