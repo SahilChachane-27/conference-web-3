@@ -18,7 +18,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <div className="relative bg-background z-10">
-          <Preamble 2/>
+          <Preamble />
           <RegisterNowCta />
           <AboutCollege />
           <Objectives />
