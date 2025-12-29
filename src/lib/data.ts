@@ -320,12 +320,13 @@ export const testimonials = [
 export const contactInfo = [
     { title: 'Email Us', icon: 'Mail' as const, value: 'sustaintechcon@pvppcoe.ac.in' },
     { title: 'Call Us', icon: 'Smartphone' as const, value: '+91-8485863406' },
-    { title: 'Address', icon: 'Home' as const, value: 'Vasantadada Patil Pratishthan’s College of Engineering and Visual Arts' },
+    { title: 'Address', icon: 'Home' as const, value: 'Vasantadada Patil Patil Pratishthan’s College of Engineering and Visual Arts' },
 ];
   
 export const socialLinks = [
-    { name: 'Facebook', icon: 'Facebook' as const, href: '#' },
-    { name: 'Twitter', icon: 'Twitter' as const, href: '#' },
+    { name: 'Facebook', icon: 'Facebook' as const, href: 'https://www.facebook.com/profile.php?id=61583580994300' },
+    { name: 'Instagram', icon: 'Instagram' as const, href: 'https://www.instagram.com/researcher_connect?igsh=MTRhbjZ4dHczcHBrbw==' },
+    { name: 'Youtube', icon: 'Youtube' as const, href: 'https://www.youtube.com/@Researcherconnect' },
 ];
 
 export const committeeData = {

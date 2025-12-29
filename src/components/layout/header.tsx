@@ -103,8 +103,8 @@ export function Header() {
             src="/scopus.png" // change path if needed
             alt="Header Visual"
             width={60}
-            height={60}
-            className="object-contain h-14"
+            height={80}
+            className="object-contain h-32"
           />
 
           {/* Social Icons */}
