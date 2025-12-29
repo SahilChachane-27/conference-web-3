@@ -57,25 +57,21 @@ export function Footer() {
                  <h2 className="font-headline text-2xl font-bold">
                     Quick <span className="text-accent">Links</span>
                 </h2>
-                <Card className="bg-card/20 backdrop-blur-sm text-card-foreground border-l-4 border-accent shadow-sm hover:shadow-md transition-shadow duration-300 w-full">
-                    <CardContent className="p-4">
-                        <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
-                            {navLinks.map((link) => (
-                                link.isDropdown ? (
-                                    link.subLinks?.map(subLink => (
-                                        <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
-                                            {subLink.label}
-                                        </Link>
-                                    ))
-                                ) : (
-                                    <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
-                                        {link.label}
-                                    </Link>
-                                )
-                            ))}
-                        </nav>
-                    </CardContent>
-                </Card>
+                <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
+                    {navLinks.map((link) => (
+                        link.isDropdown ? (
+                            link.subLinks?.map(subLink => (
+                                <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
+                                    {subLink.label}
+                                </Link>
+                            ))
+                        ) : (
+                            <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
+                                {link.label}
+                            </Link>
+                        )
+                    ))}
+                </nav>
             </div>
 
             {/* Column 3: Social Links */}
