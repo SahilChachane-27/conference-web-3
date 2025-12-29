@@ -87,7 +87,7 @@ export function Header() {
             ) : (
               <Link
                 key={link.href}
-                href={link.href}
+                href=""
                 className="text-sm font-medium text-black hover:text-gray-700"
               >
                 {link.label}
@@ -163,7 +163,7 @@ export function Header() {
                       ) : (
                         <Link
                           key={link.href}
-                          href={link.href}
+                          href=""
                           onClick={() => setMobileMenuOpen(false)}
                           className="text-lg font-medium text-black hover:text-gray-700"
                         >
