@@ -24,7 +24,7 @@ export function Speakers() {
                 <div className="relative aspect-square">
                   {speaker.image && (
                     <Image
-                      src={speaker.image.imageUrl}
+                      src={speaker.image.imageUrl || '/image.png'}
                       alt={`Portrait of ${speaker.name}`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
