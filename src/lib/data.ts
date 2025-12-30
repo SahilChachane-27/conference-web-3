@@ -220,55 +220,55 @@ export const objectives = [
 };
 
 export const speakers = [
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-ben') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-sophie') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-james') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-rose') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-oscar') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-isaac') || getImage('speaker-placeholder'),
-  },
     {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-john') || getImage('speaker-placeholder'),
-  },
-  {
-    name: 'Coming Soon',
-    title: 'Distinguished Speaker',
-    bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-emily') || getImage('speaker-placeholder'),
-  },
-];
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-ben'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-sophie'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-james'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-rose'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-oscar'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-isaac'),
+    },
+      {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-john'),
+    },
+    {
+      name: 'Coming Soon',
+      title: 'Distinguished Speaker',
+      bio: 'An overview of this speaker and their talk will be available soon.',
+      image: getImage('speaker-emily'),
+    },
+  ];
 
 export const schedules = [
     {
