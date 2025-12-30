@@ -41,7 +41,7 @@ export function Tickets() {
                     {tickets.map((ticket, index) => (
                         <div key={index} className={cn(
                             "bg-white rounded-lg shadow-lg border-t-4 flex flex-col",
-                            ticket.featured ? "border-secondary" : "border-primary"
+                            ticket.featured ? "border-primary" : "border-primary"
                         )}>
                             <div className="p-8">
                                 <h3 className="text-2xl font-bold font-headline mb-2">{ticket.type}</h3>
@@ -67,7 +67,7 @@ export function Tickets() {
                                     size="lg" 
                                     className={cn(
                                         "w-full text-lg",
-                                        ticket.featured ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground" : "bg-primary hover:bg-primary/90"
+                                        ticket.featured ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-primary hover:bg-primary/90"
                                     )}
                                 >
                                     Get Ticket
