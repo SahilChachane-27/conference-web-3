@@ -66,12 +66,7 @@ export function Tickets() {
                                 <Button 
                                     onClick={() => handleGetTicket(ticket.type)} 
                                     size="lg" 
-                                    className={cn(
-                                        "w-full text-lg",
-                                        ticket.featured 
-                                            ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
-                                            : "bg-accent hover:bg-accent/90 text-accent-foreground"
-                                    )}
+                                    className="w-full text-lg bg-primary hover:bg-primary/90 text-primary-foreground"
                                 >
                                     Get Ticket
                                 </Button>
