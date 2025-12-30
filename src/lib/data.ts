@@ -1,7 +1,7 @@
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
-const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as ImagePlaceholder;
+const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
 export const navLinks = [
   {
@@ -224,49 +224,49 @@ export const speakers = [
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-ben'),
+    image: getImage('speaker-ben') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-sophie'),
+    image: getImage('speaker-sophie') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-james'),
+    image: getImage('speaker-james') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-rose'),
+    image: getImage('speaker-rose') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-oscar'),
+    image: getImage('speaker-oscar') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-isaac'),
+    image: getImage('speaker-isaac') || getImage('speaker-placeholder'),
   },
     {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-john'),
+    image: getImage('speaker-john') || getImage('speaker-placeholder'),
   },
   {
     name: 'Coming Soon',
     title: 'Distinguished Speaker',
     bio: 'An overview of this speaker and their talk will be available soon.',
-    image: getImage('speaker-emily'),
+    image: getImage('speaker-emily') || getImage('speaker-placeholder'),
   },
 ];
 

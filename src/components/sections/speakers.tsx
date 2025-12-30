@@ -22,14 +22,16 @@ export function Speakers() {
             <Card key={index} className="overflow-hidden group text-center rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <CardContent className="p-0">
                 <div className="relative aspect-square">
-                  <Image
-                    src={speaker.image.imageUrl}
-                    alt={`Portrait of ${speaker.name}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    data-ai-hint={speaker.image.imageHint}
-                  />
+                  {speaker.image && (
+                    <Image
+                      src={speaker.image.imageUrl}
+                      alt={`Portrait of ${speaker.name}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      data-ai-hint={speaker.image.imageHint}
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/70 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-sm text-center text-white">{speaker.bio}</p>
                   </div>
