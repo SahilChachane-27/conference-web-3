@@ -40,15 +40,15 @@ export function Tickets() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {tickets.map((ticket, index) => (
                         <div key={index} className={cn(
-                            "bg-white rounded-lg shadow-lg border-t-4 flex flex-col",
-                            ticket.featured ? "border-primary" : "border-primary"
+                            "bg-white rounded-lg shadow-lg border-t-4 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
+                            ticket.featured ? "border-primary" : "border-gray-300"
                         )}>
                             <div className="p-8">
                                 <h3 className="text-2xl font-bold font-headline mb-2">{ticket.type}</h3>
                                 <p className="text-muted-foreground mb-4">{ticket.category}</p>
                                 <div className="text-4xl font-bold font-headline mb-4">
                                     {ticket.earlyBird.usd} <span className="text-lg font-normal text-muted-foreground">/ {ticket.earlyBird.inr}</span>
-                                </div>
+                                 </div>
                                 <p className="text-sm text-muted-foreground">Early Bird Price. Late Bird: {ticket.lateBird.usd} / {ticket.lateBird.inr}</p>
                             </div>
                             <div className="p-8 bg-muted/30 flex-grow">
@@ -67,7 +67,7 @@ export function Tickets() {
                                     size="lg" 
                                     className={cn(
                                         "w-full text-lg",
-                                        ticket.featured ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-primary hover:bg-primary/90"
+                                        ticket.featured ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-secondary hover:bg-secondary/90"
                                     )}
                                 >
                                     Get Ticket
