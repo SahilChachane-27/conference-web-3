@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -67,7 +68,7 @@ export function Tickets() {
                                     size="lg" 
                                     className={cn(
                                         "w-full text-lg",
-                                        ticket.featured ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-secondary hover:bg-secondary/90"
+                                        "bg-accent hover:bg-accent/90 text-accent-foreground"
                                     )}
                                 >
                                     Get Ticket
