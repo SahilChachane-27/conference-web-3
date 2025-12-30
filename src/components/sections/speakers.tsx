@@ -32,7 +32,16 @@ export function Speakers() {
                       data-ai-hint={speaker.image.imageHint}
                     />
                   )}
-                  <div className="absolute inset-0 bg-black/70 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {speaker.image && (
+                        <Image
+                            src={speaker.image.imageUrl || '/image.png'}
+                            alt={`Portrait of ${speaker.name}`}
+                            width={80}
+                            height={80}
+                            className="rounded-full border-4 border-white/50 mb-3"
+                        />
+                    )}
                     <p className="text-sm text-center text-white">{speaker.bio}</p>
                   </div>
                 </div>
