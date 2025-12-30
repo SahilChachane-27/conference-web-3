@@ -44,7 +44,7 @@ export function Organizers() {
         </div>
         
         <div className="text-center mt-12">
-            <Button asChild size="lg">
+            <Button asChild size="lg" variant="secondary">
                 <Link href="#">Become a Sponsor</Link>
             </Button>
         </div>
