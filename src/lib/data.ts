@@ -224,7 +224,7 @@ export const speakers = [
       name: 'Coming Soon',
       title: 'Distinguished Speaker',
       bio: 'An overview of this speaker and their talk will be available soon.',
-      image: getImage('speaker-ben'),
+      image: getImage('2(1).jpg'),
     },
     {
       name: 'Coming Soon',
