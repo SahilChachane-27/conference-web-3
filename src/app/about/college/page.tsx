@@ -11,7 +11,7 @@ export default function AboutCollegePage() {
         <div className="container mx-auto px-4 md:px-6 py-12">
             <div className="mb-12">
                  <Image
-                    src="/college.JPG"
+                    src="/college.jpg"
                     alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
                     width={1200}
                     height={400}

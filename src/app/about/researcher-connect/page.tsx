@@ -17,7 +17,7 @@ export default function AboutResearcherConnectPage() {
           {pageImage && (
               <div className="mb-12">
                 <Image
-                    src="/RClogo.webp"
+                    src="/rclogo.webp"
                     alt={pageImage.description}
                     width={1200}
                     height={400}

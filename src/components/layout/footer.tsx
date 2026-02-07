@@ -68,7 +68,7 @@ export function Footer() {
                 ))}
                 </ul>
                 <div className="mt-6">
-                    <Image src="/RC Updated.jpeg" alt="Researcher Connect Logo" width={150} height={80} className="object-contain rounded-md" />
+                    <Image src="/rc-updated.jpeg" alt="Researcher Connect Logo" width={150} height={80} className="object-contain rounded-md" />
                 </div>
             </div>
           </div>

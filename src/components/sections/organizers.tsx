@@ -4,11 +4,11 @@ import { Button } from '../ui/button';
 import Link from 'next/link';
 
 const logos = [
-    { src: "/College.png", alt: "College Logo" },
-    { src: "/SDG.webp", alt: "SDG Logo" },
-    { src: "/RC Updated.jpeg", alt: "Researcher Connect Logo" },
+    { src: "/college.png", alt: "College Logo" },
+    { src: "/sdg.webp", alt: "SDG Logo" },
+    { src: "/rc-updated.jpeg", alt: "Researcher Connect Logo" },
     { src: "/google_scholar.png", alt: "Google Scholar Logo" },
-    { src: "/Elsevier.png", alt: "Elsevier Logo" },
+    { src: "/elsevier.png", alt: "Elsevier Logo" },
     { src: "/scopus.png", alt: "Scopus Logo" },
     { src: "/logo3.png", alt: "Partner Logo" },
 ];
@@ -44,7 +44,7 @@ export function Organizers() {
         </div>
         
         <div className="text-center mt-12">
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="hover:bg-accent/90">
                 <Link href="#">Become a Sponsor</Link>
             </Button>
         </div>
