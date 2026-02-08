@@ -60,8 +60,8 @@ export function Tickets() {
                                 <TableRow className='hover:bg-transparent'>
                                     <TableHead className="text-base font-bold">Ticket Type</TableHead>
                                     <TableHead className="text-base font-bold">Category</TableHead>
-                                    <TableHead className="text-base font-bold">Early Bird</TableHead>
-                                    <TableHead className="text-base font-bold">Late Bird</TableHead>
+                                    <TableHead className="text-base font-bold">Early Bird (USD / INR)</TableHead>
+                                    <TableHead className="text-base font-bold">Late Bird (USD / INR)</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
