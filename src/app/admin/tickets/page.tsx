@@ -21,6 +21,8 @@ type Ticket = {
     category: string;
     earlyBird: { usd: string; inr: string };
     lateBird: { usd: string; inr: string };
+    features?: string[];
+    featured?: boolean;
 };
 
 type FormValues = {
@@ -30,7 +32,7 @@ type FormValues = {
 export default function AdminTicketsPage() {
     const firestore = useFirestore();
     const { toast } = useToast();
-    const ticketsCollectionRef = useMemo(() => collection(firestore, 'tickets'), [firestore]);
+    const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
     const { data: ticketsData, isLoading } = useCollection<Ticket>(ticketsCollectionRef);
 
     const form = useForm<FormValues>({
@@ -53,6 +55,7 @@ export default function AdminTicketsPage() {
     }, [ticketsData, form]);
 
     const handleInitializeData = async () => {
+        if (!firestore) return;
         const batch = writeBatch(firestore);
         defaultTickets.forEach((ticketData) => {
             const ticketId = ticketData.type.toLowerCase().replace(/ /g, '-');
@@ -67,6 +70,7 @@ export default function AdminTicketsPage() {
     };
     
     const onSubmit = async (data: FormValues) => {
+        if (!firestore) return;
         const batch = writeBatch(firestore);
         data.tickets.forEach(ticket => {
             const { id, ...ticketData } = ticket;
@@ -81,10 +85,12 @@ export default function AdminTicketsPage() {
                 description: 'Ticket prices have been updated.',
             });
         } catch (e: any) {
-            errorEmitter.emit('permission-error', {
-                path: ticketsCollectionRef.path,
-                operation: 'update'
-            });
+            if (ticketsCollectionRef) {
+                errorEmitter.emit('permission-error', {
+                    path: ticketsCollectionRef.path,
+                    operation: 'update'
+                });
+            }
         }
     };
 

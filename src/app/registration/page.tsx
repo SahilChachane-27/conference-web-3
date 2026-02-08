@@ -1,9 +1,11 @@
+'use client';
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Tickets } from "@/components/sections/tickets";
+import { FirebaseClientProvider } from "@/firebase";
 
-export default function RegistrationPage() {
+function RegistrationPageContent() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -12,5 +14,13 @@ export default function RegistrationPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function RegistrationPage() {
+  return (
+    <FirebaseClientProvider>
+      <RegistrationPageContent />
+    </FirebaseClientProvider>
   );
 }

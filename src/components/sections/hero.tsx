@@ -1,12 +1,30 @@
+'use client';
 
+import { useMemo } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, Loader2 } from "lucide-react";
+import { doc } from 'firebase/firestore';
+import { useFirestore } from '@/firebase';
+import { useDoc } from '@/firebase/firestore/use-doc';
 
-import { heroData } from "@/lib/data";
+import { heroData as staticHeroData } from "@/lib/data";
 import { Button } from "../ui/button";
 
+type Config = {
+    title: string;
+    subtitle: string;
+    date: string;
+    location: string;
+}
+
 export function Hero() {
+  const firestore = useFirestore();
+  const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
+  const { data: config, isLoading } = useDoc<Config>(configRef);
+
+  const heroData = config || staticHeroData;
+
   return (
     <section
       id="home"
@@ -26,33 +44,37 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center p-4">
-        <div className="max-w-4xl space-y-6">
-          <h1 className="font-headline text-5xl font-bold md:text-7xl lg:text-8xl tracking-tight uppercase">
-            {heroData.title}
-          </h1>
+        {isLoading ? (
+          <Loader2 className="h-12 w-12 animate-spin" />
+        ) : (
+          <div className="max-w-4xl space-y-6">
+            <h1 className="font-headline text-5xl font-bold md:text-7xl lg:text-8xl tracking-tight uppercase">
+              {heroData.title}
+            </h1>
 
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row text-lg md:text-xl">
-            <div className="flex items-center gap-2">
-              <CalendarDays className="h-5 w-5 text-accent" />
-              <span>{heroData.date}</span>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row text-lg md:text-xl">
+              <div className="flex items-center gap-2">
+                <CalendarDays className="h-5 w-5 text-accent" />
+                <span>{heroData.date}</span>
+              </div>
+              <div className="hidden sm:block">|</div>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-accent" />
+                <span>{heroData.location}</span>
+              </div>
             </div>
-            <div className="hidden sm:block">|</div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-accent" />
-              <span>{heroData.location}</span>
+
+            <p className="text-lg font-light text-slate-200 md:text-xl lg:text-2xl">
+              {config ? config.subtitle : staticHeroData.subtitle}
+            </p>
+
+            <div className="flex justify-center gap-4 pt-4">
+              <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6">
+                <Link href="/registration">Get Tickets</Link>
+              </Button>
             </div>
           </div>
-
-           <p className="text-lg font-light text-slate-200 md:text-xl lg:text-2xl">
-            {heroData.subtitle}
-          </p>
-
-          <div className="flex justify-center gap-4 pt-4">
-            <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6">
-              <Link href="/registration">Get Tickets</Link>
-            </Button>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+'use client';
 
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/sections/hero";
@@ -9,12 +10,12 @@ import { Preamble } from "@/components/sections/preamble";
 import { Objectives } from "@/components/sections/objectives";
 import { AboutCollege } from "@/components/sections/about-college";
 import { Organizers } from "@/components/sections/organizers";
-import { RegisterNowCta } from "@/components/sections/register-now-cta";
 import { Speakers } from '@/components/sections/speakers';
 import { Schedule } from '@/components/sections/schedule';
 import { Tickets } from '@/components/sections/tickets';
+import { FirebaseClientProvider } from "@/firebase";
 
-export default function Home() {
+function HomePageContent() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -37,5 +38,14 @@ export default function Home() {
         </Button>
       </Link>
     </div>
+  );
+}
+
+
+export default function Home() {
+  return (
+    <FirebaseClientProvider>
+      <HomePageContent />
+    </FirebaseClientProvider>
   );
 }
