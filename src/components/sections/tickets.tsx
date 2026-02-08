@@ -1,21 +1,11 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { collection } from 'firebase/firestore';
 import { useFirestore } from '@/firebase';
 import { useCollection } from '@/firebase/firestore/use-collection';
 import { tickets as defaultTickets } from '@/lib/data';
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-  } from "@/components/ui/alert-dialog"
-import { Button } from '../ui/button';
 import { Loader2 } from 'lucide-react';
 import {
     Table,
@@ -37,17 +27,9 @@ type Ticket = {
 };
 
 export function Tickets() {
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [selectedTicket, setSelectedTicket] = useState('');
-
     const firestore = useFirestore();
     const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
     const { data: ticketsData, isLoading } = useCollection<Ticket>(ticketsCollectionRef);
-
-    const handleGetTicket = (ticketType: string) => {
-        setSelectedTicket(ticketType);
-        setDialogOpen(true);
-    };
 
     const tickets = useMemo(() => {
         if (!ticketsData) return [];
@@ -80,7 +62,6 @@ export function Tickets() {
                                     <TableHead className="text-base font-bold">Category</TableHead>
                                     <TableHead className="text-base font-bold">Early Bird</TableHead>
                                     <TableHead className="text-base font-bold">Late Bird</TableHead>
-                                    <TableHead className="text-right text-base font-bold">Action</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -90,15 +71,6 @@ export function Tickets() {
                                         <TableCell>{ticket.category}</TableCell>
                                         <TableCell>{ticket.earlyBird.usd} / {ticket.earlyBird.inr}</TableCell>
                                         <TableCell>{ticket.lateBird.usd} / {ticket.lateBird.inr}</TableCell>
-                                        <TableCell className="text-right">
-                                            <Button 
-                                                onClick={() => handleGetTicket(ticket.type)} 
-                                                size="sm"
-                                                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                                            >
-                                                Get Ticket
-                                            </Button>
-                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -106,21 +78,6 @@ export function Tickets() {
                     </div>
                 )}
             </div>
-
-            <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
-                <AlertDialogContent>
-                    <AlertDialogHeader>
-                    <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        You have successfully simulated registering for the <strong>{selectedTicket}</strong> ticket.
-                        This is a demonstration and no actual registration has been made.
-                    </AlertDialogDescription>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                    <AlertDialogAction onClick={() => setDialogOpen(false)}>OK</AlertDialogAction>
-                    </AlertDialogFooter>
-                </AlertDialogContent>
-            </AlertDialog>
         </section>
     );
 }
