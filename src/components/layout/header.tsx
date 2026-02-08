@@ -73,7 +73,7 @@ export function Header() {
               <div key={link.label} className="relative group">
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-black' : 'text-white'} hover:text-secondary`}>
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-foreground' : 'text-white'} hover:text-secondary`}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -84,7 +84,7 @@ export function Header() {
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm text-foreground hover:bg-gray-100"
                       >
                         {sub.label}
                       </Link>
@@ -96,7 +96,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-secondary`}
+                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground' : 'text-white'} hover:text-secondary`}
               >
                 {link.label}
               </Link>
@@ -118,7 +118,7 @@ export function Header() {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open Menu">
-                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
+                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
 
@@ -134,7 +134,7 @@ export function Header() {
                     {navLinks.map((link) =>
                       link.isDropdown ? (
                         <div key={link.label}>
-                          <p className="text-lg font-medium text-black">
+                          <p className="text-lg font-medium text-foreground">
                             {link.label}
                           </p>
                           <div className="ml-4 mt-2 flex flex-col gap-2">
@@ -143,7 +143,7 @@ export function Header() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-black hover:text-secondary"
+                                className="text-foreground hover:text-secondary"
                               >
                                 {sub.label}
                               </Link>
@@ -155,7 +155,7 @@ export function Header() {
                           key={link.href}
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="text-lg font-medium text-black hover:text-secondary"
+                          className="text-lg font-medium text-foreground hover:text-secondary"
                         >
                           {link.label}
                         </Link>
