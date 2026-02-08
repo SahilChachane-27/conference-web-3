@@ -62,17 +62,17 @@
     "providers": ["email-password"]
   },
   "firestore": {
-    "/config/{docId}": {
+    "/sustainTechConCollections/{docId}": {
       "schema": {
         "$ref": "#/entities/conferenceConfig"
       },
-      "description": "Conference configuration documents."
+      "description": "Main document for conference configuration."
     },
-    "/tickets/{ticketId}": {
+    "/sustainTechConCollections/{docId}/tickets/{ticketId}": {
       "schema": {
         "$ref": "#/entities/ticket"
       },
-      "description": "Conference ticket documents."
+      "description": "Conference ticket documents, nested under the main conference document."
     }
   }
 }

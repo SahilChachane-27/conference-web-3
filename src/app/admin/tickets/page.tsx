@@ -32,7 +32,7 @@ type FormValues = {
 export default function AdminTicketsPage() {
     const firestore = useFirestore();
     const { toast } = useToast();
-    const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
+    const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'sustainTechConCollections', 'data', 'tickets') : null, [firestore]);
     const { data: ticketsData, isLoading } = useCollection<Ticket>(ticketsCollectionRef);
 
     const form = useForm<FormValues>({
@@ -59,7 +59,7 @@ export default function AdminTicketsPage() {
         const batch = writeBatch(firestore);
         defaultTickets.forEach((ticketData) => {
             const ticketId = ticketData.type.toLowerCase().replace(/ /g, '-');
-            const docRef = doc(firestore, 'tickets', ticketId);
+            const docRef = doc(firestore, 'sustainTechConCollections', 'data', 'tickets', ticketId);
             batch.set(docRef, ticketData);
         });
         await batch.commit();
@@ -74,7 +74,7 @@ export default function AdminTicketsPage() {
         const batch = writeBatch(firestore);
         data.tickets.forEach(ticket => {
             const { id, ...ticketData } = ticket;
-            const docRef = doc(firestore, 'tickets', id);
+            const docRef = doc(firestore, 'sustainTechConCollections', 'data', 'tickets', id);
             batch.update(docRef, ticketData);
         });
 

@@ -20,7 +20,7 @@ type Config = {
 
 export function Hero() {
   const firestore = useFirestore();
-  const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
+  const configRef = useMemo(() => firestore ? doc(firestore, 'sustainTechConCollections', 'data') : null, [firestore]);
   const { data: config, isLoading } = useDoc<Config>(configRef);
 
   const heroData = config || staticHeroData;

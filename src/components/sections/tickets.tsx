@@ -28,7 +28,7 @@ type Ticket = {
 
 export function Tickets() {
     const firestore = useFirestore();
-    const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
+    const ticketsCollectionRef = useMemo(() => firestore ? collection(firestore, 'sustainTechConCollections', 'data', 'tickets') : null, [firestore]);
     const { data: ticketsData, isLoading } = useCollection<Ticket>(ticketsCollectionRef);
 
     const tickets = useMemo(() => {

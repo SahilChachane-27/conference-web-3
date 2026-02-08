@@ -27,7 +27,7 @@ type ConfigFormValues = z.infer<typeof configSchema>;
 export default function AdminConferencePage() {
     const firestore = useFirestore();
     const { toast } = useToast();
-    const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
+    const configRef = useMemo(() => firestore ? doc(firestore, 'sustainTechConCollections', 'data') : null, [firestore]);
     const { data: configData, isLoading } = useDoc<ConfigFormValues>(configRef);
 
     const form = useForm<ConfigFormValues>({
