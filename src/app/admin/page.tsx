@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -27,7 +27,7 @@ type ConfigFormValues = z.infer<typeof configSchema>;
 export default function AdminConferencePage() {
     const firestore = useFirestore();
     const { toast } = useToast();
-    const configRef = doc(firestore, 'config', 'main');
+    const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
     const { data: configData, isLoading } = useDoc<ConfigFormValues>(configRef);
 
     const form = useForm<ConfigFormValues>({
@@ -47,6 +47,7 @@ export default function AdminConferencePage() {
     }, [configData, form]);
 
     const onSubmit = async (data: ConfigFormValues) => {
+        if (!configRef) return;
         try {
             await setDoc(configRef, data);
             toast({
