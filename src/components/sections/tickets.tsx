@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from 'react';
@@ -17,8 +16,15 @@ import {
     AlertDialogTitle,
   } from "@/components/ui/alert-dialog"
 import { Button } from '../ui/button';
-import { cn } from '@/lib/utils';
-import { Check, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
 
 type Ticket = {
     id: string;
@@ -66,41 +72,37 @@ export function Tickets() {
                         <Loader2 className="h-12 w-12 animate-spin text-primary" />
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {tickets.map((ticket, index) => (
-                            <div key={ticket.id || index} className={cn(
-                                "bg-white rounded-lg shadow-lg border-t-4 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
-                                "border-primary"
-                            )}>
-                                <div className="p-8">
-                                    <h3 className="text-2xl font-bold font-headline mb-2">{ticket.type}</h3>
-                                    <p className="text-muted-foreground mb-4">{ticket.category}</p>
-                                    <div className="text-4xl font-bold font-headline mb-4">
-                                        {ticket.earlyBird.usd} <span className="text-lg font-normal text-muted-foreground">/ {ticket.earlyBird.inr}</span>
-                                     </div>
-                                    <p className="text-sm text-muted-foreground">Late Bird: {ticket.lateBird.usd} / {ticket.lateBird.inr}</p>
-                                </div>
-                                <div className="p-8 bg-muted/30 flex-grow">
-                                    <ul className="space-y-3">
-                                        {(ticket.features || []).map((feature, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                                <span className="text-muted-foreground">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="p-6 mt-auto">
-                                    <Button 
-                                        onClick={() => handleGetTicket(ticket.type)} 
-                                        size="lg" 
-                                        className="w-full text-lg bg-primary hover:bg-primary/90 text-primary-foreground"
-                                    >
-                                        Get Ticket
-                                    </Button>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border">
+                        <Table>
+                            <TableHeader>
+                                <TableRow className='hover:bg-transparent'>
+                                    <TableHead className="text-base font-bold">Ticket Type</TableHead>
+                                    <TableHead className="text-base font-bold">Category</TableHead>
+                                    <TableHead className="text-base font-bold">Early Bird</TableHead>
+                                    <TableHead className="text-base font-bold">Late Bird</TableHead>
+                                    <TableHead className="text-right text-base font-bold">Action</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {tickets.map((ticket) => (
+                                    <TableRow key={ticket.id}>
+                                        <TableCell className="font-medium">{ticket.type}</TableCell>
+                                        <TableCell>{ticket.category}</TableCell>
+                                        <TableCell>{ticket.earlyBird.usd} / {ticket.earlyBird.inr}</TableCell>
+                                        <TableCell>{ticket.lateBird.usd} / {ticket.lateBird.inr}</TableCell>
+                                        <TableCell className="text-right">
+                                            <Button 
+                                                onClick={() => handleGetTicket(ticket.type)} 
+                                                size="sm"
+                                                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                            >
+                                                Get Ticket
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </div>
                 )}
             </div>
@@ -122,4 +124,3 @@ export function Tickets() {
         </section>
     );
 }
-
