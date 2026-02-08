@@ -73,7 +73,7 @@ export function Header() {
               <div key={link.label} className="relative group">
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-foreground' : 'text-white'} hover:text-secondary`}>
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-black' : 'text-white'} hover:text-secondary`}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -96,7 +96,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground' : 'text-white'} hover:text-secondary`}
+                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-secondary`}
               >
                 {link.label}
               </Link>
@@ -118,7 +118,7 @@ export function Header() {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open Menu">
-                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
 
