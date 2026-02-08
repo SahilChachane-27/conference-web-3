@@ -106,9 +106,6 @@ export function Header() {
 
         {/* ================= RIGHT SIDE ================= */}
         <div className="hidden md:flex items-center gap-4">
-            <Button asChild variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/registration">Tickets</Link>
-            </Button>
         </div>
 
 
@@ -164,9 +161,6 @@ export function Header() {
                   </nav>
 
                   <div className="pt-4">
-                    <Button asChild variant="secondary" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/registration">Tickets</Link>
-                    </Button>
                   </div>
                 </div>
               </SheetContent>
