@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { contactInfo, socialLinks, navLinks } from '@/lib/data';
 import * as Icons from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.ComponentProps<typeof Icons.Icon>) => {
     const LucideIcon = Icons[name] as React.ComponentType<any>;
@@ -17,6 +18,7 @@ const LinkComponent = ({ href, children, className }: { href: string, children: 
 );
 
 export function Footer() {
+  const rcLogo = PlaceHolderImages.find(img => img.id === 'researcher-connect-logo');
   return (
     <footer className="bg-[#141c25] text-primary-foreground py-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -68,7 +70,9 @@ export function Footer() {
                 ))}
                 </ul>
                 <div className="mt-6">
-                    <Image src="/rc-updated.jpeg" alt="Researcher Connect Logo" width={150} height={80} className="object-contain rounded-md" />
+                    {rcLogo && (
+                        <Image src={rcLogo.imageUrl} alt="Researcher Connect Logo" width={150} height={80} className="object-contain rounded-md" data-ai-hint={rcLogo.imageHint} />
+                    )}
                 </div>
             </div>
           </div>

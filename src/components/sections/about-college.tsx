@@ -35,7 +35,7 @@ export function AboutCollege() {
           <div>
             {collegeImage && (
                 <Image
-                    src="/college.jpg"
+                    src={collegeImage.imageUrl}
                     alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
                     width={600}
                     height={800}

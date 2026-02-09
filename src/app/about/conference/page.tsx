@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function AboutConferencePage() {
-  const conferenceImage = PlaceHolderImages.find(img => img.id === 'hero-1');
+  const conferenceImage = PlaceHolderImages.find(img => img.id === 'conference-logo');
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -18,7 +18,7 @@ export default function AboutConferencePage() {
                 {conferenceImage && (
                 <div className="mb-8">
                     <Image
-                        src="/reframed_logo-preview.png"
+                        src={conferenceImage.imageUrl}
                         alt="About the conference"
                         width={600}
                         height={400}

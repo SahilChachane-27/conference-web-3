@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function VenuePage() {
+  const venueImage = PlaceHolderImages.find(img => img.id === 'college-building');
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
@@ -24,13 +26,16 @@ export default function VenuePage() {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 hover:shadow-2xl transition-shadow duration-300">
             {/* Image */}
             <div className="relative w-full h-[320px] md:h-[480px]">
-              <Image
-                src="/college.jpg"
-                alt="Conference Venue"
-                fill
-                className="object-cover"
-                priority
-              />
+              {venueImage && (
+                <Image
+                  src={venueImage.imageUrl}
+                  alt="Conference Venue"
+                  fill
+                  className="object-cover"
+                  data-ai-hint={venueImage.imageHint}
+                  priority
+                />
+              )}
             </div>
 
             {/* Content */}

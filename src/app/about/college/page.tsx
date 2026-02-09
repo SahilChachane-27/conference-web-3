@@ -2,22 +2,26 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function AboutCollegePage() {
+  const collegeImage = PlaceHolderImages.find(img => img.id === 'college-building');
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 md:px-6 py-12">
             <div className="mb-12">
-                 <Image
-                    src="/college.jpg"
-                    alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
-                    width={1200}
-                    height={400}
-                    className="rounded-lg shadow-2xl object-cover w-full aspect-[3/1]"
-                    data-ai-hint="college building"
-                />
+                 {collegeImage && (
+                    <Image
+                        src={collegeImage.imageUrl}
+                        alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
+                        width={1200}
+                        height={400}
+                        className="rounded-lg shadow-2xl object-cover w-full aspect-[3/1]"
+                        data-ai-hint={collegeImage.imageHint}
+                    />
+                 )}
             </div>
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold font-headline mb-8 text-center">About Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts</h1>

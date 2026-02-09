@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function AboutResearcherConnectPage() {
-  const pageImage = PlaceHolderImages.find(img => img.id === 'researcher-connect');
+  const pageImage = PlaceHolderImages.find(img => img.id === 'researcher-connect-logo');
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -16,7 +16,7 @@ export default function AboutResearcherConnectPage() {
           {pageImage && (
               <div className="mb-12">
                 <Image
-                    src="/rclogo.webp"
+                    src={pageImage.imageUrl}
                     alt={pageImage.description}
                     width={1200}
                     height={400}

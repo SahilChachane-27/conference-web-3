@@ -13,57 +13,63 @@
       "imageHint": "AI green"
     },
     {
+      "id": "hero-banner",
+      "description": "A conference stage.",
+      "imageUrl": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "conference stage"
+    },
+    {
       "id": "speaker-placeholder",
       "description": "Placeholder for a speaker headshot.",
-      "imageUrl": "https://placehold.co/400x400/eeeeee/31343C?text=?",
+      "imageUrl": "https://images.unsplash.com/photo-1607018407589-c1a93c64eea0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwbGFjZWhvbGRlciUyMHBlcnNvbnxlbnwwfHx8fDE3NzA2NjI0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "placeholder person"
     },
     {
       "id": "speaker-ben",
       "description": "Headshot of Dr. John Smith.",
-      "imageUrl": "/speakers/1.jpg",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwNjMzNDMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "male portrait"
     },
     {
       "id": "speaker-sophie",
       "description": "Headshot of Dr. Jane Doe.",
-      "imageUrl": "/speakers/2.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1634149134664-ca3598f29da5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmZW1hbGUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzA2NTY0MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "female portrait"
     },
     {
       "id": "speaker-james",
       "description": "Headshot of Prof. Alan Turing.",
-      "imageUrl": "/speakers/3.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1725866546799-4cc16f6cba23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc3MDU4Mzc3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man smiling"
     },
     {
       "id": "speaker-oscar",
       "description": "Headshot of a speaker.",
-      "imageUrl": "/speakers/4.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1542183669-c4c74d629b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYWxlJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3MDY2MjQwOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "male professional"
     },
     {
       "id": "speaker-rose",
       "description": "Headshot of Dr. Ada Lovelace.",
-      "imageUrl": "/speakers/5.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1711645169736-53327e726205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzcwNjUwNzA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman smiling"
     },
     {
       "id": "speaker-isaac",
       "description": "Headshot of a speaker.",
-      "imageUrl": "/speakers/6.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYWxlJTIwaGVhZHNob3R8ZW58MHx8fHwxNzcwNjI2NTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "male headshot"
     },
     {
       "id": "speaker-john",
       "description": "Headshot of a speaker.",
-      "imageUrl": "/speakers/7.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzcwNjA2NTYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional man"
     },
     {
       "id": "speaker-emily",
       "description": "Headshot of a speaker.",
-      "imageUrl": "/speakers/8.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1553514029-1318c9127859?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMGhlYWRzaG90fGVufDB8fHx8MTc3MDYxNjMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman headshot"
     },
     {
@@ -87,49 +93,49 @@
     {
       "id": "sponsor-skype",
       "description": "Logo for Skype.",
-      "imageUrl": "https://images.unsplash.com/photo-1662057168154-89300791ad6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjYzNjk2MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1629716645211-8c04bd0c0661?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NzA1OTYyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "sponsor-envato",
       "description": "Logo for Envato.",
-      "imageUrl": "https://images.unsplash.com/photo-1605898643907-844c2bfc764e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjYzNjk2MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1622651132634-a7ed1fbb86dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NzA1OTYyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "sponsor-dribbble",
       "description": "Logo for Dribbble.",
-      "imageUrl": "https://images.unsplash.com/photo-1657885428127-38a40be4e232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZXNpZ24lMjBsb2dvfGVufDB8fHx8MTc2NjM1MzI1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641932156899-a9a319476799?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkZXNpZ24lMjBsb2dvfGVufDB8fHx8MTc3MDYxNTQzMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "design logo"
     },
     {
       "id": "sponsor-mailchimp",
       "description": "Logo for Mailchimp.",
-      "imageUrl": "https://images.unsplash.com/photo-1683201681321-1415b8794e73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc2NjQyMTg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1670341445737-06f70d9b291a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYXJrZXRpbmclMjBsb2dvfGVufDB8fHx8MTc3MDY2MjQwOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "marketing logo"
     },
     {
       "id": "sponsor-android",
       "description": "Logo for Android.",
-      "imageUrl": "https://images.unsplash.com/photo-1662057168154-89300791ad6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjYzNjk2MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1622651132634-a7ed1fbb86dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NzA1OTYyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "sponsor-jquery",
       "description": "Logo for jQuery.",
-      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2RlJTIwbG9nb3xlbnwwfHx8fDE3NjY0MjE4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1642367340318-96fdbc5d30f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2RlJTIwbG9nb3xlbnwwfHx8fDE3NzA2NjI0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "code logo"
     },
     {
       "id": "sponsor-sass",
       "description": "Logo for Sass.",
-      "imageUrl": "https://images.unsplash.com/photo-1663770114127-4f61cb62b56d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2RlJTIwbG9nb3xlbnwwfHx8fDE3NjY0MjE4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1650951472998-4abf9d05f0c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2RlJTIwbG9nb3xlbnwwfHx8fDE3NzA2NjI0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "code logo"
     },
     {
       "id": "sponsor-pinterest",
       "description": "Logo for Pinterest.",
-      "imageUrl": "https://images.unsplash.com/photo-1690138871282-b84c8bb4244d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2NpYWwlMjBsb2dvfGVufDB8fHx8MTc2NjQyMTg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1724862936518-ae7fcfc052c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBsb2dvfGVufDB8fHx8MTc3MDU2NjY1OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "social logo"
     },
     {
@@ -149,6 +155,18 @@
       "description": "An image of books and research papers, symbolizing academic publication.",
       "imageUrl": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGJvb2tzfGVufDB8fHx8MTc2NjUzMTIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "academic books"
+    },
+    {
+      "id": "conference-logo",
+      "description": "The conference logo",
+      "imageUrl": "https://images.unsplash.com/photo-1642367340318-96fdbc5d30f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb25mZXJlbmNlJTIwbG9nb3xlbnwwfHx8fDE3NzA2NjI0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference logo"
+    },
+    {
+      "id": "researcher-connect-logo",
+      "description": "The Researcher Connect logo",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzA2MTIzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
     }
   ]
 }

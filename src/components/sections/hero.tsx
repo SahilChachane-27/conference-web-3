@@ -9,6 +9,7 @@ import { useFirestore } from '@/firebase';
 import { useDoc } from '@/firebase/firestore/use-doc';
 
 import { heroData as staticHeroData } from "@/lib/data";
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from "../ui/button";
 
 type Config = {
@@ -24,6 +25,7 @@ export function Hero() {
   const { data: config, isLoading } = useDoc<Config>(configRef);
 
   const heroData = config || staticHeroData;
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-banner');
 
   return (
     <section
@@ -32,13 +34,16 @@ export function Hero() {
     >
       {/* Banner Image */}
       <div className="absolute inset-0">
-        <Image
-          src="/2.jpg"
-          alt="Hero Banner"
-          fill
-          priority
-          className="object-cover"
-        />
+        {heroImage && 
+            <Image
+            src={heroImage.imageUrl}
+            alt="Hero Banner"
+            fill
+            priority
+            className="object-cover"
+            data-ai-hint={heroImage.imageHint}
+            />
+        }
         <div className="absolute inset-0 bg-black/60" />
       </div>
 

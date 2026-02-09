@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { navLinks } from "@/lib/data";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 /* ================= ICON HELPER ================= */
 const Icon = ({
@@ -30,18 +31,24 @@ const Icon = ({
 };
 
 /* ================= LOGO ================= */
-const Logo = () => (
-  <Link href="/" className="flex items-center gap-2">
-    <Image
-      src="/reframed_logo-preview.png"
-      alt="SustainTechCon Logo"
-      width={120}
-      height={40}
-      className="h-10 w-auto"
-      priority
-    />
-  </Link>
-);
+const Logo = () => {
+    const logoImage = PlaceHolderImages.find(img => img.id === 'conference-logo');
+    return (
+        <Link href="/" className="flex items-center gap-2">
+            {logoImage && (
+                <Image
+                    src={logoImage.imageUrl}
+                    alt="SustainTechCon Logo"
+                    width={120}
+                    height={40}
+                    className="h-10 w-auto"
+                    priority
+                    data-ai-hint={logoImage.imageHint}
+                />
+            )}
+        </Link>
+    );
+}
 
 /* ================= HEADER ================= */
 export function Header() {
@@ -58,6 +65,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const linkColor = isScrolled ? 'text-foreground' : 'text-white';
+
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className={`container mx-auto flex h-20 items-center justify-between px-4 md:px-6 transition-all duration-300`}>
@@ -73,7 +82,7 @@ export function Header() {
               <div key={link.label} className="relative group">
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isScrolled || mobileMenuOpen ? 'text-black' : 'text-white'} hover:text-secondary`}>
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${linkColor} hover:text-secondary`}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -96,7 +105,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-secondary`}
+                className={`text-sm font-medium transition-colors ${linkColor} hover:text-secondary`}
               >
                 {link.label}
               </Link>

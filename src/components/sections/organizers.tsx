@@ -2,18 +2,10 @@
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-
-const logos = [
-    { src: "/college.png", alt: "College Logo" },
-    { src: "/sdg.webp", alt: "SDG Logo" },
-    { src: "/rc-updated.jpeg", alt: "Researcher Connect Logo" },
-    { src: "/google_scholar.png", alt: "Google Scholar Logo" },
-    { src: "/elsevier.png", alt: "Elsevier Logo" },
-    { src: "/scopus.png", alt: "Scopus Logo" },
-    { src: "/logo3.png", alt: "Partner Logo" },
-];
+import { publishingPartners } from '@/lib/data';
 
 export function Organizers() {
+  const partners = [...publishingPartners, ...publishingPartners]; // Duplicate for seamless loop
   return (
     <section id="organizers" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
@@ -28,16 +20,20 @@ export function Organizers() {
         
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-marquee">
-                {logos.map((logo, index) => (
+                {partners.map((partner, index) => (
                     <li key={index}>
-                        <Image src={logo.src} alt={logo.alt} width={150} height={80} className="object-contain" />
+                        {partner.image && (
+                            <Image src={partner.image.imageUrl} alt={partner.name} width={150} height={80} className="object-contain" data-ai-hint={partner.image.imageHint}/>
+                        )}
                     </li>
                 ))}
             </ul>
              <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-marquee" aria-hidden="true">
-                {logos.map((logo, index) => (
-                    <li key={index}>
-                        <Image src={logo.src} alt={logo.alt} width={150} height={80} className="object-contain" />
+                {partners.map((partner, index) => (
+                    <li key={`clone-${index}`}>
+                        {partner.image && (
+                           <Image src={partner.image.imageUrl} alt={partner.name} width={150} height={80} className="object-contain" data-ai-hint={partner.image.imageHint}/>
+                        )}
                     </li>
                 ))}
             </ul>
