@@ -10,7 +10,7 @@ import { useDoc } from '@/firebase/firestore/use-doc';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { errorEmitter } from '@/firebase/error-emitter';
@@ -20,6 +20,7 @@ const configSchema = z.object({
     subtitle: z.string().min(1, 'Subtitle is required'),
     date: z.string().min(1, 'Date is required'),
     location: z.string().min(1, 'Location is required'),
+    countdownTarget: z.string().min(1, 'Countdown target is required').regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/, 'Must be in YYYY-MM-DDTHH:MM:SS format'),
 });
 
 type ConfigFormValues = z.infer<typeof configSchema>;
@@ -37,6 +38,7 @@ export default function AdminConferencePage() {
             subtitle: '',
             date: '',
             location: '',
+            countdownTarget: '2026-03-06T09:00:00',
         },
     });
 
@@ -128,6 +130,22 @@ export default function AdminConferencePage() {
                                     <FormControl>
                                         <Input {...field} />
                                     </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="countdownTarget"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Countdown Target</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="YYYY-MM-DDTHH:MM:SS" {...field} />
+                                    </FormControl>
+                                    <FormDescription>
+                                        The target date for the countdown timer. Use YYYY-MM-DDTHH:MM:SS format.
+                                    </FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}

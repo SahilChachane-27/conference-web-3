@@ -1,12 +1,8 @@
 'use client';
 
-import { useMemo } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, MapPin, Loader2 } from "lucide-react";
-import { doc } from 'firebase/firestore';
-import { useFirestore } from '@/firebase';
-import { useDoc } from '@/firebase/firestore/use-doc';
 
 import { heroData as staticHeroData } from "@/lib/data";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -17,13 +13,15 @@ type Config = {
     subtitle: string;
     date: string;
     location: string;
+    countdownTarget: string;
+} | null;
+
+interface HeroProps {
+  config: Config;
+  isLoading: boolean;
 }
 
-export function Hero() {
-  const firestore = useFirestore();
-  const configRef = useMemo(() => firestore ? doc(firestore, 'sustainTechConCollections', 'data') : null, [firestore]);
-  const { data: config, isLoading } = useDoc<Config>(configRef);
-
+export function Hero({ config, isLoading }: HeroProps) {
   const heroData = config || staticHeroData;
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-banner');
 
