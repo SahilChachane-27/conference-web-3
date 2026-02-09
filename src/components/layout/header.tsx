@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, ChevronDown } from "lucide-react";
 import * as Icons from "lucide-react";
 import type { LucideProps } from "lucide-react";
@@ -55,6 +56,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     setIsClient(true);
@@ -65,10 +68,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const linkColor = isScrolled ? 'text-foreground' : 'text-white';
+  const isTransparent = isHomePage && !isScrolled;
+  const linkColor = isTransparent ? 'text-white' : 'text-foreground';
+  const headerBg = isTransparent ? 'bg-transparent' : 'bg-white shadow-md';
+  const menuIconColor = isTransparent ? 'text-white' : 'text-black';
 
   return (
-    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${headerBg}`}>
       <div className={`container mx-auto flex h-20 items-center justify-between px-4 md:px-6 transition-all duration-300`}>
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -124,7 +130,7 @@ export function Header() {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open Menu">
-                  <Menu className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
+                  <Menu className={`h-6 w-6 ${menuIconColor}`} />
                 </Button>
               </SheetTrigger>
 
