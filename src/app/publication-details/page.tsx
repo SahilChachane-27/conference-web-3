@@ -65,14 +65,16 @@ export default function PublicationDetailsPage() {
                                     <div className="p-1">
                                         <Card className="overflow-hidden">
                                             <CardContent className="flex aspect-square items-center justify-center p-6">
-                                                <Image 
-                                                    src={partner.image.imageUrl}
-                                                    alt={partner.name}
-                                                    width={150}
-                                                    height={150}
-                                                    className="object-contain"
-                                                    data-ai-hint={partner.image.imageHint}
-                                                />
+                                                {partner.image && (
+                                                    <Image 
+                                                        src={partner.image.imageUrl}
+                                                        alt={partner.name}
+                                                        width={150}
+                                                        height={150}
+                                                        className="object-contain"
+                                                        data-ai-hint={partner.image.imageHint}
+                                                    />
+                                                )}
                                             </CardContent>
                                         </Card>
                                     </div>
