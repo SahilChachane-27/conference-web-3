@@ -3,7 +3,6 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { List, ListItem } from "@/components/ui/list";
 
 export default function AboutResearcherConnectPage() {
   const pageImage = PlaceHolderImages.find(img => img.id === 'researcher-connect');
