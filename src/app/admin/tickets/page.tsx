@@ -58,7 +58,7 @@ export default function AdminTicketsPage() {
         if (!firestore) return;
         const batch = writeBatch(firestore);
         defaultTickets.forEach((ticketData) => {
-            const ticketId = ticketData.type.toLowerCase().replace(/ /g, '-');
+            const ticketId = ticketData.type.toLowerCase().replace(/[ /]/g, '-');
             const docRef = doc(firestore, 'sustainTechConCollections', 'data', 'tickets', ticketId);
             batch.set(docRef, ticketData);
         });
