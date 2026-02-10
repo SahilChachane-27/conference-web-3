@@ -2,7 +2,7 @@ import { objectives } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import * as Icons from "lucide-react";
 
-const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.ComponentProps<typeof Icons.Icon>) => {
+const Icon = ({ name, ...props }: { name: keyof typeof Icons } & Icons.LucideProps) => {
     const LucideIcon = Icons[name] as React.ComponentType<any>;
     if (!LucideIcon) {
         return <Icons.CheckCircle2 {...props} />;
