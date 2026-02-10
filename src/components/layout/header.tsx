@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, ChevronDown } from "lucide-react";
-import * as Icons from "lucide-react";
-import type { LucideProps } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,17 +17,6 @@ import {
 
 import { navLinks } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-
-/* ================= ICON HELPER ================= */
-const Icon = ({
-  name,
-  ...props
-}: {
-  name: keyof typeof Icons;
-} & LucideProps) => {
-  const LucideIcon = Icons[name] as React.FC<LucideProps>;
-  return <LucideIcon {...props} />;
-};
 
 /* ================= LOGO ================= */
 const Logo = () => {
@@ -96,6 +83,7 @@ export function Header() {
                 <div className="absolute left-0 hidden min-w-[220px] pt-2 group-hover:block">
                   <div className="rounded-md bg-white shadow-lg py-2">
                     {link.subLinks?.map((sub) => (
+                      sub.href &&
                       <Link
                         key={sub.href}
                         href={sub.href}
@@ -153,14 +141,16 @@ export function Header() {
                           </p>
                           <div className="ml-4 mt-2 flex flex-col gap-2">
                             {link.subLinks?.map((sub) => (
-                              <Link
-                                key={sub.href}
-                                href={sub.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="text-foreground hover:text-secondary"
-                              >
-                                {sub.label}
-                              </Link>
+                              sub.href && (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-foreground hover:text-secondary"
+                                >
+                                  {sub.label}
+                                </Link>
+                              )
                             ))}
                           </div>
                         </div>
