@@ -108,13 +108,15 @@ export function Header() {
                 </div>
               </div>
             ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors ${linkColor} hover:text-secondary`}
-              >
-                {link.label}
-              </Link>
+              link.href && (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors ${linkColor} hover:text-secondary`}
+                >
+                  {link.label}
+                </Link>
+              )
             )
           )}
         </nav>
@@ -163,14 +165,16 @@ export function Header() {
                           </div>
                         </div>
                       ) : (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="text-lg font-medium text-foreground hover:text-secondary"
-                        >
-                          {link.label}
-                        </Link>
+                        link.href && (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-lg font-medium text-foreground hover:text-secondary"
+                          >
+                            {link.label}
+                          </Link>
+                        )
                       )
                     )}
                   </nav>
