@@ -2,20 +2,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { contactInfo, socialLinks, navLinks } from '@/lib/data';
-import * as Icons from 'lucide-react';
-import type { LucideProps } from 'lucide-react';
-import { Card, CardContent } from '../ui/card';
+import { 
+    Mail, Smartphone, Home, Facebook, Instagram, Youtube, type LucideProps
+} from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const Icon = ({
-  name,
-  ...props
-}: {
-  name: keyof typeof Icons;
-} & LucideProps) => {
-  const LucideIcon = Icons[name] as React.FC<LucideProps>;
-  return <LucideIcon {...props} />;
-};
 
 const LinkComponent = ({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) => (
     <Link href={href} className={`text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1 ${className}`}>
@@ -25,6 +15,16 @@ const LinkComponent = ({ href, children, className }: { href: string, children: 
 
 export function Footer() {
   const rcLogo = PlaceHolderImages.find(img => img.id === 'researcher-connect-logo');
+  
+  const iconMap: Record<string, React.FC<LucideProps>> = {
+      Mail,
+      Smartphone,
+      Home,
+      Facebook,
+      Instagram,
+      Youtube
+  };
+
   return (
     <footer className="bg-[#141c25] text-primary-foreground py-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -47,17 +47,20 @@ export function Footer() {
           <div className="space-y-4">
             <h2 className="font-headline text-2xl font-bold text-white text-center">Get in Touch</h2>
             <div className="space-y-4 pt-4">
-                {contactInfo.map((info) => (
-                <div key={info.title} className="flex items-start gap-4">
-                    <div className="bg-white/10 p-2 rounded-full">
-                        <Icon name={info.icon} className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                        <h3 className="font-semibold text-white">{info.title}</h3>
-                        <p className="text-sm text-white/80">{info.value}</p>
-                    </div>
-                </div>
-                ))}
+                {contactInfo.map((info) => {
+                    const Icon = iconMap[info.icon];
+                    return (
+                        <div key={info.title} className="flex items-start gap-4">
+                            <div className="bg-white/10 p-2 rounded-full">
+                                {Icon && <Icon className="h-5 w-5 text-white" />}
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-white">{info.title}</h3>
+                                <p className="text-sm text-white/80">{info.value}</p>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
           </div>
           
@@ -66,14 +69,17 @@ export function Footer() {
             <h2 className="font-headline text-2xl font-bold text-white">Follow Us</h2>
             <div className='pt-4'>
                 <ul className="list-inline flex justify-center gap-4">
-                {socialLinks.map((link) => (
-                    <li key={link.name}>
-                    <Link href={link.href} className="text-white/80 hover:text-white bg-white/10 p-3 rounded-full block">
-                        <Icon name={link.icon} className="h-6 w-6" />
-                        <span className="sr-only">{link.name}</span>
-                    </Link>
-                    </li>
-                ))}
+                {socialLinks.map((link) => {
+                     const Icon = iconMap[link.icon];
+                     return (
+                        <li key={link.name}>
+                            <Link href={link.href} className="text-white/80 hover:text-white bg-white/10 p-3 rounded-full block">
+                                {Icon && <Icon className="h-6 w-6" />}
+                                <span className="sr-only">{link.name}</span>
+                            </Link>
+                        </li>
+                     )
+                })}
                 </ul>
                 <div className="mt-6">
                     {rcLogo && (
