@@ -29,10 +29,10 @@ export function Footer() {
             <h2 className="font-headline text-2xl font-bold text-white text-center md:text-left">Quick Links</h2>
             <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
                 {navLinks.filter(l => !l.isDropdown).map(link => (
-                    <LinkComponent key={link.href} href={link.href}>{link.label}</LinkComponent>
+                    link.href && <LinkComponent key={link.href} href={link.href}>{link.label}</LinkComponent>
                 ))}
                 {navLinks.find(l => l.label === 'About')?.subLinks?.map(link => (
-                     <LinkComponent key={link.href} href={link.href}>{link.label}</LinkComponent>
+                     link.href && <LinkComponent key={link.href} href={link.href}>{link.label}</LinkComponent>
                 ))}
             </nav>
           </div>
