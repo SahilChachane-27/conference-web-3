@@ -14,6 +14,7 @@ import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDes
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 const configSchema = z.object({
     title: z.string().min(1, 'Title is required'),
@@ -48,21 +49,24 @@ export default function AdminConferencePage() {
         }
     }, [configData, form]);
 
-    const onSubmit = async (data: ConfigFormValues) => {
+    const onSubmit = (data: ConfigFormValues) => {
         if (!configRef) return;
-        try {
-            await setDoc(configRef, data);
-            toast({
-                title: 'Success!',
-                description: 'Conference settings have been updated.',
+        
+        setDoc(configRef, data, { merge: true })
+            .then(() => {
+                toast({
+                    title: 'Success!',
+                    description: 'Conference settings have been updated.',
+                });
+            })
+            .catch(() => {
+                const permissionError = new FirestorePermissionError({
+                    path: configRef.path,
+                    operation: 'update',
+                    requestResourceData: data,
+                });
+                errorEmitter.emit('permission-error', permissionError);
             });
-        } catch (e: any) {
-             errorEmitter.emit('permission-error', {
-                path: configRef.path,
-                operation: 'update',
-                requestResourceData: data,
-            });
-        }
     };
 
     if (isLoading) {

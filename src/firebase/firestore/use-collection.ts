@@ -28,7 +28,6 @@ export function useCollection<T>(query: Query<DocumentData> | null) {
                     operation: 'list',
                 });
                 errorEmitter.emit('permission-error', permissionError);
-                console.error("Error fetching collection:", error);
                 setIsLoading(false);
             }
         );

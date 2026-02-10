@@ -14,6 +14,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 type Ticket = {
     id: string;
@@ -69,8 +70,8 @@ export default function AdminTicketsPage() {
         });
     };
     
-    const onSubmit = async (data: FormValues) => {
-        if (!firestore) return;
+    const onSubmit = (data: FormValues) => {
+        if (!firestore || !ticketsCollectionRef) return;
         const batch = writeBatch(firestore);
         data.tickets.forEach(ticket => {
             const { id, ...ticketData } = ticket;
@@ -78,20 +79,20 @@ export default function AdminTicketsPage() {
             batch.update(docRef, ticketData);
         });
 
-        try {
-            await batch.commit();
-            toast({
-                title: 'Success!',
-                description: 'Ticket prices have been updated.',
-            });
-        } catch (e: any) {
-            if (ticketsCollectionRef) {
-                errorEmitter.emit('permission-error', {
-                    path: ticketsCollectionRef.path,
-                    operation: 'update'
+        batch.commit()
+            .then(() => {
+                toast({
+                    title: 'Success!',
+                    description: 'Ticket prices have been updated.',
                 });
-            }
-        }
+            })
+            .catch(() => {
+                const permissionError = new FirestorePermissionError({
+                    path: ticketsCollectionRef.path,
+                    operation: 'update',
+                });
+                errorEmitter.emit('permission-error', permissionError);
+            });
     };
 
     if (isLoading) {
