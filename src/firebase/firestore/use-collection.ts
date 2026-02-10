@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { onSnapshot, Query, DocumentData, QuerySnapshot } from 'firebase/firestore';
+import { onSnapshot, Query, DocumentData, QuerySnapshot, CollectionReference } from 'firebase/firestore';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 
@@ -23,8 +23,11 @@ export function useCollection<T>(query: Query<DocumentData> | null) {
                 setIsLoading(false);
             },
             async (error) => {
+                // A Query may not have a .path property, but a CollectionReference does.
+                // We try to access it but fallback to a generic message if it's a complex query.
+                const path = (query as CollectionReference<DocumentData>).path ?? 'a collection';
                 const permissionError = new FirestorePermissionError({
-                    path: query.path,
+                    path,
                     operation: 'list',
                 });
                 errorEmitter.emit('permission-error', permissionError);
