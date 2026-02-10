@@ -3,12 +3,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { contactInfo, socialLinks, navLinks } from '@/lib/data';
 import * as Icons from 'lucide-react';
+import type { LucideProps } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.ComponentProps<typeof Icons.Icon>) => {
-    const LucideIcon = Icons[name] as React.ComponentType<any>;
-    return <LucideIcon {...props} />;
+const Icon = ({
+  name,
+  ...props
+}: {
+  name: keyof typeof Icons;
+} & LucideProps) => {
+  const LucideIcon = Icons[name] as React.FC<LucideProps>;
+  return <LucideIcon {...props} />;
 };
 
 const LinkComponent = ({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) => (
