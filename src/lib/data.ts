@@ -53,7 +53,7 @@ export const objectives = [
       description: 'To provide a global platform for research scholars and professionals to present high-quality research.',
     },
     {
-      icon: 'Bridge' as const,
+      icon: 'Handshake' as const,
       title: 'Bridge Gaps',
       description: 'To bridge the gap between academia, industry, and society.',
     },
